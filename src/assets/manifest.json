@@ -1,0 +1,74 @@
+{
+  "name": "Wath the Hell",
+  "dir": "ltr",
+  "lang": "ru-RU",
+  "orientation": "landscape-primary",
+  "prefer_related_applications": false,
+  "theme_color": "aliceblue",
+  "short_name": "WTH",
+  "description":
+    "Онлайн энциклопедия, социальная сеть, предоставляющая своим пользователям возможность организовывать свой досуг. Редактируемая пользователем база данных.",
+  "icons": [
+    {
+      "src": "./img/lowres.webp",
+      "sizes": "48x48",
+      "type": "image/webp"
+    },
+    {
+      "src": "./img/standard.ico",
+      "sizes": "72x72 96x96 128x128 256x256"
+    },
+    {
+      "src": "./img/hd_hi.svg",
+      "sizes": "257x257"
+    },
+        {
+            "src": "./favicons/android-chrome-36x36.png?v=rMlQkNPnXJ",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "./favicons/android-chrome-48x48.png?v=rMlQkNPnXJ",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "./favicons/android-chrome-72x72.png?v=rMlQkNPnXJ",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "./favicons/android-chrome-96x96.png?v=rMlQkNPnXJ",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "./favicons/android-chrome-144x144.png?v=rMlQkNPnXJ",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "./favicons/android-chrome-192x192.png?v=rMlQkNPnXJ",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./favicons/android-chrome-256x256.png?v=rMlQkNPnXJ",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "./favicons/android-chrome-384x384.png?v=rMlQkNPnXJ",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "./favicons/android-chrome-512x512.png?v=rMlQkNPnXJ",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+  ],
+  "start_url": "http://wth.ninja",
+  "version": "0.1",
+  "manifest_version" : "1.0"
+}

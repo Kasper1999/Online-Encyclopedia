@@ -1,0 +1,150 @@
+<app-card [noHeader]="true">
+	<mat-card-header>
+		<mat-card-title class="profile-privacy__ttl">
+			Чтобы убедиться в том, что вы установили подходящие настройки приватности,<br>
+			Вы можете посмотреть, как видят вашу страницу другие пользователи.
+		</mat-card-title>
+	</mat-card-header>
+	<mat-card-content>
+		<button class="profile-privacy__btn" mat-button  (click)="showAlert()">Посмотреть от лица другого пользователя </button>
+	</mat-card-content>
+</app-card>
+
+<app-card [title]="'Моя страница'">
+	<mat-slide-toggle class="profile-privacy__tg" (change)=
+	"onChange($event)">
+		Сгруппировать
+	</mat-slide-toggle>
+	<br>
+	<mat-card-content class="profile-privacy__cnt" [ngClass]="checked">
+		<p>
+			Кто видит мою фамилию и имя
+		</p>
+	</mat-card-content>
+	<mat-radio-group class="profile-privacy__rdGr">
+		<mat-radio-button class="profile-privacy__rdBtn" *ngFor="let userGroup of userGroups" [value]="userGroup">
+    	{{userGroup}}<br>
+		</mat-radio-button>
+	</mat-radio-group>
+	<div [ngClass]="checked">
+		<mat-card-content class="profile-privacy__cnt">
+			<p>
+				Кто видит «О себе»
+			</p>
+		</mat-card-content>
+		<mat-radio-group class="profile-privacy__rdGr">
+			<mat-radio-button class="profile-privacy__rdBtn" *ngFor="let userGroup of userGroups" [value]="userGroup">
+	    	{{userGroup}}<br>
+			</mat-radio-button>
+		</mat-radio-group>
+
+		<mat-card-content class="profile-privacy__cnt">
+			<p>
+				Кто видит мой пол
+			</p>
+		</mat-card-content>
+		<mat-radio-group class="profile-privacy__rdGr">
+			<mat-radio-button class="profile-privacy__rdBtn" *ngFor="let userGroup of userGroups" [value]="userGroup">
+	    	{{userGroup}}<br>
+			</mat-radio-button>
+		</mat-radio-group>
+
+		<mat-card-content class="profile-privacy__cnt">
+			<p>
+				Кто видит мой возраст
+			</p>
+		</mat-card-content>
+		<mat-radio-group class="profile-privacy__rdGr">
+			<mat-radio-button class="profile-privacy__rdBtn" *ngFor="let userGroup of userGroups" [value]="userGroup">
+	    	{{userGroup}}<br>
+			</mat-radio-button>
+		</mat-radio-group>
+
+		<mat-card-content class="profile-privacy__cnt">
+			<p>
+				Кто видит мою стану и город
+			</p>
+		</mat-card-content>
+		<mat-radio-group class="profile-privacy__rdGr">
+			<mat-radio-button class="profile-privacy__rdBtn" *ngFor="let userGroup of userGroups" [value]="userGroup">
+	    	{{userGroup}}<br>
+			</mat-radio-button>
+		</mat-radio-group>
+
+		<mat-card-content class="profile-privacy__cnt">
+			<p>
+				Кто видит моих скрытых друзей
+			</p>
+		</mat-card-content>
+		<mat-radio-group class="profile-privacy__rdGr">
+			<mat-radio-button class="profile-privacy__rdBtn" *ngFor="let userGroup of userGroups" [value]="userGroup">
+	    	{{userGroup}}<br>
+			</mat-radio-button>
+		</mat-radio-group>
+
+		<mat-card-content class="profile-privacy__cnt">
+			<p>
+				Кто видит мою должность на ресурсе
+			</p>
+		</mat-card-content>
+		<mat-radio-group class="profile-privacy__rdGr">
+			<mat-radio-button class="profile-privacy__rdBtn" *ngFor="let userGroup of userGroups" [value]="userGroup">
+	    	{{userGroup}}<br>
+			</mat-radio-button>
+		</mat-radio-group>
+	</div>
+</app-card>
+
+<app-card [title]="'Мой список'" >
+	<mat-slide-toggle class="profile-privacy__tg" [color]="color" (change)=
+	"onChange2($event)">
+		Сгруппировать
+	</mat-slide-toggle>
+	<br>
+	<mat-card-content class="profile-privacy__cnt" [ngClass]="checked2">
+		<p>
+			Кто видит мой список фильмов
+		</p>
+	</mat-card-content>
+	<mat-radio-group class="profile-privacy__rdGr">
+		<mat-radio-button class="profile-privacy__rdBtn" *ngFor="let userGroup of userGroups" [value]="userGroup">
+    	{{userGroup}}<br>
+		</mat-radio-button>
+	</mat-radio-group>
+	<div [ngClass]="checked2">
+		<mat-card-content class="profile-privacy__cnt">
+			<p>
+				Кто видит мой список аниме
+			</p>
+		</mat-card-content>
+		<mat-radio-group class="profile-privacy__rdGr">
+			<mat-radio-button class="profile-privacy__rdBtn" *ngFor="let userGroup of userGroups" [value]="userGroup">
+	    	{{userGroup}}<br>
+			</mat-radio-button>
+		</mat-radio-group>
+
+		<mat-card-content class="profile-privacy__cnt">
+			<p>
+				Кто видит мой список мультфильмав
+			</p>
+		</mat-card-content>
+		<mat-radio-group class="profile-privacy__rdGr">
+			<mat-radio-button class="profile-privacy__rdBtn" *ngFor="let userGroup of userGroups" [value]="userGroup">
+	    	{{userGroup}}<br>
+			</mat-radio-button>
+		</mat-radio-group>
+	</div>
+</app-card>
+
+<app-card [title]="'Прочее'">
+	<mat-card-content class="profile-privacy__cnt">
+		<p>
+			Кому в интернете видна моя страница 
+		</p>
+	</mat-card-content>
+	<mat-radio-group class="profile-privacy__rdGr">
+		<mat-radio-button class="profile-privacy__rdBtn" *ngFor="let userGroup2 of userGroups2" [value]="userGroup2">
+    	{{userGroup2}}<br>
+		</mat-radio-button>
+	</mat-radio-group>
+</app-card>

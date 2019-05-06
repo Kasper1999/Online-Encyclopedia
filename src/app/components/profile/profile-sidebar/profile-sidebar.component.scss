@@ -1,0 +1,51 @@
+$sidebarBtnColor: white;
+.profile-sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #333333;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+
+  &__nav {
+    margin: 0;
+    padding: 0;
+    border-top: 5px solid #555555;
+    list-style-type: none;
+    width: 100%;
+    min-width: 100%;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  &__btn {
+    color: $sidebarBtnColor;
+    padding: 5px 30px;
+    font-size: 15px;
+    width: 100%;
+
+    /deep/.mat-button-wrapper {
+      float: left;
+    }
+
+    &_primary {
+      background-color: #00a74d;
+      margin-bottom: 40px;
+      /deep/.mat-button-wrapper {
+        float: none;
+      }
+    }
+
+    &.active {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+
+    &:hover:not(.profile-sidebar__btn_primary) {
+      background-color: rgba(0, 0, 0, 0.12);
+      transition: background-color 0.5s;
+      -webkit-transition: background-color 0.5s;
+    }
+  }
+}

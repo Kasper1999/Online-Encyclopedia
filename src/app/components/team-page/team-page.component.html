@@ -1,0 +1,52 @@
+<div class="team-page">
+  <ng-parallax img="../../../assets/img/team_page_background.jpg" [config]="{initialValue: 100}" class="team-page__parallax">
+    <article class="team-page__press team-page__center">
+      <div class="team-page__substrate team-page__center">
+        <div class="team-page__press-title team-page__center">
+          <h1 class="team-page__press-title-elem">О команде WTH</h1>
+        </div>
+        <div class="team-page__press-about team-page__center">
+          <article>
+            Команда WTH была основана в 2018 году.
+            <br>Наша цель – сделать гибкий, функциональный и прогрессивный ресурс, полезный большинству современных человеков.
+            <br>WTH был создан без поддержки сторонних лиц, и является самостоятельным open-source проектом.
+          </article>
+        </div>
+        <div class="team-page__press-add team-page__center">
+          <p>У вас есть вопросы? Пишите нам на
+            <a class="team-page__link" href="support@wth.email">support@wth.email</a> в любое время!</p>
+        </div>
+      </div>
+    </article>
+  </ng-parallax>
+  <div class="team-page__angle"></div>
+  <div class="team-page__space-background">
+    <app-space-background></app-space-background>
+  </div>
+  <div class="team-page__team">
+    <div class="team-page__team-title team-page__center">
+      <h1 class="team-page__team-title-elem">Кто работает над WTH</h1>
+    </div>
+    <div class="team-page__team-txt team-page__center">
+      <p>
+        Мы здесь, чтобы обеспечить высокое качество разработки и заботы о пользователях. Эта команда энтузиастов, Just for fun.
+      </p>
+    </div>
+    <div class="team-page__members team-page__center" *ngIf="members">
+      <div class="team-page__members-member" *ngFor="let member of members">
+        <div class="team-page__members-member-img">
+          <img src="{{member.imageSrc}}" alt="">
+        </div>
+        <div class="team-page__members-member-name">
+          <h4>{{member.name}}</h4>
+        </div>
+        <div class="team-page__members-member-post">
+          <h5>{{member.post}}</h5>
+        </div>
+        <div class="team-page__members-member-description">
+          <p>{{member.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

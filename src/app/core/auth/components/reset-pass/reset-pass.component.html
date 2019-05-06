@@ -1,0 +1,18 @@
+<div class="resetPass">
+  <mat-icon class="resetPass__topIcon" matSuffix svgIcon="email"></mat-icon>
+  <h2 class="resetPass__title">Сброс пароля</h2>
+  <span class="resetPass__line"></span>
+  <form class="resetPass__form" novalidate [formGroup]="resetForm" (submit)="onResetSubmit()">
+    <mat-form-field class="resetPass__form-email">
+      <span matPrefix class="resetPass__form-email--prefix">
+        <mat-icon matSuffix svgIcon="email"></mat-icon>
+      </span>
+      <input type="text" matInput placeholder="E-mail" formControlName="email">
+      <mat-hint class="resetPass__form-email--hint">Введите адрес ВАШЕЙ электронной почты и мы отправим вам ссылку для сброса пароля.</mat-hint>
+    </mat-form-field>
+    <button class="resetPass__form-email-button" type="submit" mat-raised-button>Отправить ссылку</button>
+    <p class="resetPass__form-cancel">
+      <a class="resetPass__form-cancel--link" (click)="toggleForm('loginPage')">Отмена</a>
+    </p>
+  </form>
+</div>

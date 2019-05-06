@@ -1,0 +1,33 @@
+<div class="small-frame__container">
+  <mat-card class="small-frame__container-card">
+    <div class="small-frame__angle-invis" (click)="showAlert()"></div>
+    <mat-card-header class="small-frame__container-card-header">
+      <div class="small-frame__container-card-header-title">
+        <ng-content select="[title]"></ng-content>
+      </div>
+    </mat-card-header>
+    <mat-card-content class="small-frame__card-content">
+      <div class="small-frame__card-content-img">
+        <ng-content select="[img]"></ng-content>
+      </div>
+      <div class="small-frame__card-content-footer">
+        <div class="small-frame__card-content-footer-rating">
+          <mat-icon matSuffix svgIcon="fire"></mat-icon>
+          <ng-content select="[footer-rating]"></ng-content>
+        </div>
+        <div class="small-frame__card-content-footer-statistic">
+          <mat-icon matSuffix svgIcon="stats-bars"></mat-icon>
+          <ng-content select="[footer-statistic]"></ng-content>
+        </div>
+        <div class="small-frame__card-content-footer-comments">
+          <mat-icon matSuffix svgIcon="bubble"></mat-icon>
+          <ng-content select="[footer-comments]"></ng-content>
+        </div>
+        <div class="small-frame__card-content-footer-views">
+          <mat-icon matSuffix svgIcon="eye"></mat-icon>
+          <ng-content select="[footer-views]"></ng-content>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

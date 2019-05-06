@@ -1,0 +1,7 @@
+#ex2 {
+  height: 500px;
+  /deep/ gallery-dots {
+    z-index: 1;
+    bottom: 0;
+  }
+}

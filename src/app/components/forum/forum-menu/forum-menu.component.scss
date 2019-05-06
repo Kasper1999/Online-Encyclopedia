@@ -1,0 +1,32 @@
+.forum-menu {
+	display: flex;
+	flex-direction: column;
+  	width: 100%;
+	  min-width: 100%;
+	  color:#fff;
+  	&__item {
+		  padding:5px 0 5px 20px;
+		  font-size: 14px;
+		  p {
+			margin:0;
+		  }
+		  &--dark {
+			background-color: #333333;
+		  }
+		  &--head {
+			display: flex;
+			align-items: center;
+			line-height: 25px;
+			font-size: 30px;
+			p {
+				margin-bottom: 5px;
+			}
+		  }
+	}
+	&__icon {
+		fill: #fff;
+		height: 35px;
+		width: 35px;
+		margin-left: 10px;
+	}
+}

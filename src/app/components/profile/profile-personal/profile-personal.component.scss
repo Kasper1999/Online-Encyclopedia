@@ -1,0 +1,84 @@
+@mixin field-margins {
+  margin-bottom: 20px;
+}
+
+$fieldWidth: 260px;
+$rightOffset: 40px;
+$inputFontSize: 14px;
+
+.profile-personal {
+  &__field {
+    @include field-margins;
+    width: $fieldWidth;
+    font-size: $inputFontSize;
+  }
+  &__right-offset {
+    margin-right: $rightOffset;
+  }
+  &__deep-color {
+    /deep/ .mat-select-value-text {
+      color: white;
+    }
+  }
+  &__names {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  &__country {
+    margin-top: 10px;
+  }
+  &__social1 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__social2 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* NSFW text styles */
+  &__nsfw--article {
+    margin-bottom: 20px;
+  }
+}
+
+.profile-personal__individual {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  color: white;
+  .profile-personal__emails {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    &-btnblock {
+      margin-bottom: 10px;
+    }
+  }
+  .profile-personal__sites {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    &-btnblock {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-personal {
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+@media (max-width: 420px) {
+  mat-form-field,
+  .profile-personal__emails,
+  .profile-personal__sites {
+    min-width: 100%;
+    width: 100%;
+    width: 110px !important;
+  }
+}

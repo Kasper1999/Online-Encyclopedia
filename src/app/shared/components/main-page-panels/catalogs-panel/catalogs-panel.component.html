@@ -1,0 +1,55 @@
+<mat-accordion class="catalogs-panel" [multi]="true">
+  <mat-expansion-panel
+    class="catalogs-panel__external-panel"
+    *ngFor="let catalog of catalogs"
+    [expanded]="catalog.isExpanded"
+    (opened)="catalog.isExpanded = true"
+    (closed)="catalog.isExpanded = false"
+    [hideToggle]="true"
+    >
+    <mat-expansion-panel-header class="catalogs-panel__external-panel-header">
+      <mat-panel-title class="catalogs-panel__external-panel-title">
+        <span>{{catalog.title}}</span> 
+        <mat-icon svgIcon="{{catalog.isExpanded  ? 'chevron-down' : 'chevron-right' }}" ></mat-icon>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <!-- Genres expansion panel -->
+      <ng-container class="catalogs-panel__genres-container" *ngFor="let genre of catalog.content; let i = index">
+        <mat-accordion class="catalogs-panel__genres-accordion">
+          <mat-expansion-panel class="catalogs-panel__genres-panel" [expanded]="true" [disabled]="true" [hideToggle]="true">
+            <button
+              mat-raised-button
+              class="catalogs-panel__genres-panel-header"
+              [(ngModel)]="genre.isEnabled"
+              (click)="changeSelector(catalog, genre.selector, i)"
+              ngDefaultControl
+              [ngClass]="{'header-background': genre.isSpecialGenre}"
+              [matTooltip]="getTooltip(genre.title, catalog.title)"
+              [matTooltipPosition]="'right'"
+              [matTooltipShowDelay]="'1500'">
+              {{genre.title}}
+              <mat-icon class="catalogs-panel__icon" svgIcon="{{genre.selector}}"></mat-icon>
+            </button>
+
+            <!-- Subgenres -->
+              <div class="catalogs-panel__subgenres-list" *ngFor="let subgenre of genre.subgenres; let subgIndex = index">
+                <button
+                  mat-raised-button
+                  class="catalogs-panel__subgenres-list-button"
+                  (click)="changeSelector(catalog, subgenre.selector, i, subgIndex)"
+                  ngDefaultControl
+                  [(ngModel)]="subgenre.isEnabled"
+                  [matTooltip]="getTooltip(subgenre.title, catalog.title)"
+                  [matTooltipPosition]="'right'"
+                  [matTooltipShowDelay]="'1500'">
+                  {{subgenre.title}}
+                  <mat-icon class="catalogs-panel__icon" svgIcon="{{subgenre.selector}}"></mat-icon>
+                </button>
+              </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </ng-container>
+
+  </mat-expansion-panel>
+</mat-accordion>

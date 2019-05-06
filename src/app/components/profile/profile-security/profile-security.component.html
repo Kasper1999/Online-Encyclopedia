@@ -1,0 +1,17 @@
+<form novalidate>
+  <div class="profile-security">
+    <app-card [title]="'Безопасность'">
+      <mat-card-content class="profile-security__item">
+        <p class="profile-security__text">
+          Последняя активность:
+          <span>57 минут назад (Беларусь, Минск)</span>
+        </p>
+        <app-button [title]="'Завершить все сеансы'" [type]="'secondary'"></app-button>
+      </mat-card-content>
+      <mat-card-title class="profile-security__title">Sessions:</mat-card-title>
+      <mat-card-content class="profile-security__item">
+        <app-profile-security-info *ngFor="let data of securityData" [infoData]="data"></app-profile-security-info>
+      </mat-card-content>
+    </app-card>
+  </div>
+</form>

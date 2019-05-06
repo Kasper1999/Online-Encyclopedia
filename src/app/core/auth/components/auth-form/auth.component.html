@@ -1,0 +1,80 @@
+<div class="auth">
+  <form class="auth__loginForm" *ngIf="selectedForm === 'loginPage'" novalidate [formGroup]="loginForm" (submit)="onLoginSubmit()">
+    <mat-form-field class="auth__loginForm-email auth__field">
+      <span matPrefix class="auth__form--prefix">
+        <mat-icon matSuffix svgIcon={{easterIcon}}></mat-icon>
+      </span>
+      <input type="text" matInput placeholder="Логин" formControlName="login" color="primary">
+    </mat-form-field>
+    <mat-form-field class="auth__loginForm-pass auth__field">
+      <span matPrefix class="auth__form--prefix">
+        <mat-icon matSuffix svgIcon="pass"></mat-icon>
+      </span>
+      <input type="password" matInput placeholder="Пароль" formControlName="password">
+    </mat-form-field>
+    <div class="auth__loginForm-buttons">
+      <button class="auth__loginForm-buttons-login auth__submit-btn--disabled" mat-raised-button type="submit" [disabled]="loginForm.invalid">Вход</button>
+      <span class="auth__loginForm-buttons-separator">или</span>
+      <button class="auth__loginForm-buttons-register" mat-raised-button (click)="toggleForm('registerPage')">Заргистрироваться</button>
+      <p class="auth__loginForm-buttons-passRecovery">
+        <a class="auth__loginForm-buttons-passRecovery--link" (click)="toggleForm('resetPassPage')">Восстановить пароль</a>
+      </p>
+    </div>
+  </form>
+
+  <form class="auth__registerForm" *ngIf="selectedForm === 'registerPage'" novalidate [formGroup]="registerForm" (submit)="onRegisterSubmit()">
+    <mat-form-field class="auth__registerForm-nickname auth__field">
+      <span matPrefix class="auth__form--prefix">
+        <mat-icon matSuffix>person</mat-icon>
+      </span>
+      <input type="text" matInput placeholder="Nickname" formControlName="nickname">
+      <mat-hint class="auth__registerForm-nickname--hint">Ник, он же никнейм, произошел от английского слова nickname и переводится как "прозвище".</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="auth__registerForm-email auth__field">
+      <span matPrefix class="auth__form--prefix">
+        <mat-icon matSuffix svgIcon="email"></mat-icon>
+      </span>
+      <input type="text" matInput placeholder="E-mail" formControlName="email">
+    </mat-form-field>
+    <div class="auth__registerForm-passGroup" formGroupName="pwd">
+      <mat-form-field class="auth__registerForm-passGroup-pass auth__field">
+        <span matPrefix class="auth__form--prefix">
+          <mat-icon matSuffix svgIcon="pass"></mat-icon>
+        </span>
+        <input type="password" matInput placeholder="Пароль" formControlName="password">
+      </mat-form-field>
+      <mat-form-field class="auth__registerForm-passGroup-confirm auth__field">
+        <span matPrefix class="auth__form--prefix">
+          <mat-icon matSuffix svgIcon="pass"></mat-icon>
+        </span>
+        <input type="password" matInput placeholder="Пароль еще раз" formControlName="confirmationPassword">
+        <mat-hint class="auth__registerForm-passGroup-confirm--hint">
+          <p class="auth__registerForm-passGroup--passErrorHint" *ngIf="this.registerForm.get('pwd').status === 'INVALID' && this.registerForm.get('pwd').get('password').value.length > 5 && this.registerForm.get('pwd').get('confirmationPassword').value.length > 5 && this.registerForm.get('pwd').get('password').value.length < 20 && this.registerForm.get('pwd').get('confirmationPassword').value.length < 20">
+            Пароли не совпадают
+          </p>
+          Пароль должен содержать от 6 до 20 символов. Можно использовать латинские буквы, цифры и символы из списка:
+          <br> ! @ # $ % ^ & * () _ = +
+          <br> Пароль не может совпадать с логином</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="auth__registerForm-buttons">
+      <button class="auth__registerForm-buttons-register auth__submit-btn--disabled" type="submit" mat-raised-button [disabled]="registerForm.invalid">Заргистрироваться</button>
+      <p class="auth__registerForm-buttons-enter">
+        <a class="auth__registerForm-buttons-enter--link" (click)="toggleForm('loginPage')">Вход</a>
+      </p>
+    </div>
+  </form>
+
+  <app-change-pass *ngIf="selectedForm === 'changePassPage'"></app-change-pass>
+  <app-reset-pass *ngIf="selectedForm === 'resetPassPage'"></app-reset-pass>
+  <app-letter-send *ngIf="selectedForm === 'letterSendPage'"></app-letter-send>
+
+
+  <div class="auth__social" *ngIf="selectedForm === 'loginPage' || selectedForm === 'registerPage'">
+    <mat-icon class="auth__social--icon" matSuffix svgIcon="vk"></mat-icon>
+    <mat-icon class="auth__social--icon" matSuffix svgIcon="facebook"></mat-icon>
+    <mat-icon class="auth__social--icon" matSuffix svgIcon="twitter"></mat-icon>
+    <mat-icon class="auth__social--icon" matSuffix svgIcon="googleplus"></mat-icon>
+    <mat-icon class="auth__social--icon" matSuffix svgIcon="odnoklassniki"></mat-icon>
+  </div>
+</div>

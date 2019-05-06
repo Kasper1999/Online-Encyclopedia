@@ -1,0 +1,50 @@
+<div class="profile-friends">
+  <app-card title="Списки друзей:">
+    <div class="item">
+      <div class="item-header">
+
+        <div fxLayout fxLayoutAlign="start center" class="item-wrapper">
+          <span class="item-title">Лучшие</span>
+          <mat-icon fxFlexOffset="10px" class="item-icons" matSuffix svgIcon="lock-alt"></mat-icon>
+          <span fxFlexOffset="28px" class="item-range">
+            7 - 1000
+          </span>
+        </div>
+        <hr class="item-header__separator">
+      </div>
+      <div fxLayout class="item-inner">
+        <div class="item-card gray"></div>
+        <div class="item-card gray"></div>
+        <div class="item-card gray"></div>
+        <div class="item-card gray"></div>
+        <div class="card frame-block"></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-header">
+
+        <div fxLayout fxLayoutAlign="start center" class="item-wrapper">
+          <span class="item-title">Работа</span>
+          <mat-icon fxFlexOffset="10px" class="item-icons" matSuffix svgIcon="pencil"></mat-icon>
+          <span fxFlexOffset="28px" class="item-range">
+            7 - 1000
+          </span>
+          <div fxLayout fxLayoutAlign="start flex-start" class="item-right">
+            <mat-icon class="item-icons bin" matSuffix svgIcon="bin"></mat-icon>
+            <app-color-picker height="30px" (hexEmitter)="onChangeColor($event)" defaultHex={{borderColor}} [onlyHex]="true"></app-color-picker>
+          </div>
+        </div>
+        <hr [ngStyle]="getStyleList()" class="item-header__separator">
+      </div>
+      <div fxLayout class="item-inner">
+        <div class="item-card gray"></div>
+        <div class="item-card gray"></div>
+        <div class="item-card gray"></div>
+        <div class="item-card gray"></div>
+        <div class="card frame-block"></div>
+      </div>
+    </div>
+
+    <div class="full frame-block"></div>
+  </app-card>
+</div>

@@ -1,0 +1,21 @@
+<div class="forum-page">
+    <div class="head">
+        <div>Developed Hell</div>
+        <button mat-raised-button>Новый тред</button>
+    </div>
+    <div class="postBlock" *ngFor="let dataP of dataForPost">
+        <div class="post">
+           <div class="header">
+               <span><a href="http://localhost:4200/#/forum/page/post#my-element">WTH_TODAY</a></span>
+               <span>#23826</span>
+               <span class="date">4 June 2018 at 20:21:00</span>
+               <mat-icon>reply</mat-icon>
+            </div>
+            <div class="content">
+                {{ dataP }}
+            </div>
+            <button mat-button>Открыть</button>
+        </div>
+        <app-forum-comment *ngFor="let dataC of dataForComment" [comment]="dataC"></app-forum-comment>
+    </div>
+</div>

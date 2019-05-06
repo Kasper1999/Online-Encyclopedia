@@ -1,0 +1,51 @@
+<div class="avatar">
+    <div 
+      class="avatar__uploader"
+      *ngIf="uploaderShow">
+      <div
+        class="avatar__uploader-file_select"
+        appDragDrop
+        (filesDropEmiter)="onChange($event)"
+        >
+        <div class="avatar__uploader-file_select-input">
+          <app-button (click)="fileInput.click()" [title]="'Выбрать файл'" [type]="'secondary'"></app-button>
+          <input
+          #fileInput
+          class="inputFile"
+          (change)="onChange($event)"
+          style="visibility: hidden; max-width: 100px;"
+          type="file">
+        </div>
+        <div class="avatar__uploader-file_select-text">
+          <h6 class="avatar__uploader-file_select-text--title">Загрузка новой фотографии</h6>
+          <p class="avatar__uploader-file_select-text--subtitle">Вы можете загрузить изображение в формате JPG, GIF или PNG</p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="avatar__cropper"
+     *ngIf="!uploaderShow"
+      >
+      <div>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+      </div>
+      <div class="avatar__cropper-crop">
+        <angular-cropper 
+          #angularCropper
+          [cropperOptions]="cropperOptions"
+          [imageUrl]=imageUrl>
+        </angular-cropper>
+      </div>
+      <div class="avatar__cropper-buttons">
+        <div class="avatar__cropper-buttons-btn">
+          <button class="avatar__cropper-buttons-btn--button" mat-raised-button (click)="onSave()">Сохранить</button>
+        <button class="avatar__cropper-buttons-btn--button" mat-raised-button (click)="reset()">Отменить</button>
+        </div>
+        <div class="avatar__cropper-buttons-icon">
+          <button class="avatar__cropper-buttons-icon--item" mat-button (click)="rotate('left')"><mat-icon (click)="rotate('left')">rotate_left</mat-icon></button>
+          <button class="avatar__cropper-buttons-icon--item" mat-button (click)="rotate('right')"><mat-icon (click)="rotate('right')">rotate_right</mat-icon></button>
+        </div>
+      </div>
+    </div>
+</div>

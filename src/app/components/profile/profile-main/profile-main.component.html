@@ -1,0 +1,313 @@
+<div class="profile-main" fxLayout fxLayout.xs="column">
+
+    <div class="profile-main__sidebar" fxLayout="column">
+        <div class="profile-main__sidebar-avatar">
+            <img class="profile-main__sidebar-avatar--img" src="http://legionportal.hol.es/img/left-blockgirl.png" alt="avatar">
+        </div>
+        <div class="profile-main__sidebar-buttons" fxLayout="column">
+            <button class="profile-main__sidebar-buttons--add" mat-raised-button fxFlex="100%">
+        <mat-icon class="icon" matSuffix svgIcon="user-add"></mat-icon>Добавить
+      </button>
+
+            <div class="profile-main__sidebar-buttons-icons" fxLayout>
+                <button class="profile-main__sidebar-buttons-icons--icon_1" mat-icon-button>
+          <mat-icon aria-label="Messages" svgIcon="bubble"></mat-icon>
+        </button>
+                <button class="profile-main__sidebar-buttons-icons--icon_2" mat-icon-button>
+          <mat-icon aria-label="Show blocked" svgIcon="eye-blocked"></mat-icon>
+        </button>
+            </div>
+
+            <app-card class="profile-main__sidebar-buttons-card" fxLayout="column" [cardType]="'default'">
+                <button class="profile-main__sidebar-buttons-card--btn" mat-button>
+          <mat-icon class="icon" matSuffix svgIcon="envelope"></mat-icon>Сообщения
+        </button>
+                <button class="profile-main__sidebar-buttons-card--btn" mat-button>
+          <mat-icon class="icon" matSuffix svgIcon="chart"></mat-icon>Статистика
+        </button>
+                <button class="profile-main__sidebar-buttons-card--btn" mat-button>
+          <mat-icon class="icon" matSuffix svgIcon="tweaks"></mat-icon>Настройки
+        </button>
+            </app-card>
+        </div>
+
+        <app-card class="profile-main__sidebar-card" fxLayout="column" [cardType]="'default'" [noHeader]="true">
+            <button class="profile-main__sidebar-card-relations" mat-button>
+        <mat-icon class="profile-main__sidebar-card-relations--icon" matSuffix svgIcon="users"></mat-icon>
+        <span class="profile-main__sidebar-card-relations--inner">53545454</span>
+      </button>
+            <button class="profile-main__sidebar-card-relations" mat-button>
+        <mat-icon class="profile-main__sidebar-card-relations--icon" matSuffix svgIcon="users"></mat-icon>
+        <span class="profile-main__sidebar-card-relations--inner">53454</span>
+      </button>
+            <div class="profile-main__sidebar-card-list">
+                <div class="profile-main__sidebar-card-list-wrapper" fxLayout fxLayoutWrap>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="profile-main__sidebar-card-list">
+                <div class="profile-main__sidebar-card--best-title">
+                    <h4 class="friends--title">Лучшие</h4>
+                </div>
+                <div class="profile-main__sidebar-card-list-wrapper" fxLayout fxLayoutWrap>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="profile-main__sidebar-card-list">
+                <div class="profile-main__sidebar-card--work-title">
+                    <h4 class="friends--title">Работа</h4>
+                </div>
+                <div class="profile-main__sidebar-card-list-wrapper" fxLayout fxLayoutWrap>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="profile-main__sidebar-card-list">
+                <div class="profile-main__sidebar-card--online-title">
+                    <h4 class="friends--title">Online</h4>
+                </div>
+                <div class="profile-main__sidebar-card-list-wrapper" fxLayout fxLayoutWrap>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                    <div class="element">
+                        <img src="http://legionportal.hol.es/img/left-blockgirl.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </app-card>
+        <app-footer></app-footer>
+    </div>
+
+
+    <div class="profile-main__info" fxLayout="column">
+        <div class="profile-main__info-headbar" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+            <div fxFlex="30%" class="profile-main__info-headbar-status" fxLayout="column">
+                <div class="profile-main__info-headbar-status-nickname">
+                    <h1 class="nickname">Kilovat
+                        <sup class="nickname-status">
+              <button class="nickname-status-menu" mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon [style.fill]="statusColor" class="nickname-status-menu--icon" matSuffix svgIcon="circle"></mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="toggleStatus('online')">
+                  <mat-icon class="nickname-status--nickname-icon nickname-status-icon--online" matSuffix svgIcon="circle"></mat-icon>
+                  <span>В сети</span>
+                </button>
+                <button mat-menu-item (click)="toggleStatus('notActive')">
+                  <mat-icon class="nickname-status--nickname-icon nickname-status-icon--not-active" matSuffix svgIcon="circle"></mat-icon>
+                  <span>Не активен</span>
+                </button>
+                <button mat-menu-item (click)="toggleStatus('notDisturb')">
+                  <mat-icon class="nickname-status--nickname-icon nickname-status-icon--not-disturb" matSuffix svgIcon="circle"></mat-icon>
+                  <span>Не беспокоить</span>
+                </button>
+                <mat-hint class="nickname-status-hint">
+                  <p class="nickname-status-hint--title">Вы не будете получать уведомления</p>
+                </mat-hint>
+                <button mat-menu-item (click)="toggleStatus('invis')">
+                  <mat-icon class="nickname-status--nickname-icon nickname-status-icon--invis" matSuffix svgIcon="circle"></mat-icon>
+                  <span>Невидимый</span>
+                </button>
+                <mat-hint class="nickname-status-hint">
+                  <p class="nickname-status-hint--title">Вы не будете отображаться в сети, но будете иметь полный доступ к функциям WTH</p>
+                </mat-hint>
+              </mat-menu>
+            </sup>
+                    </h1>
+                </div>
+                <div class="profile-main__info-headbar-status-name">
+                    <h3>Александр Туманов</h3>
+                </div>
+                <div class="profile-main__info-headbar-status-role">
+                    <button mat-raised-button>Administration</button>
+                </div>
+                <div class="profile-main__info-headbar-status-additional">
+                    <div fxLayout>
+                        <h4>муж \ 40 \ Беларусь \ Минск</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-main__info-headbar-charts_polar" fxLayout fxLayout.md="column" fxLayout.sm="column" fxLayout.xs="column">
+                <app-d3-sunburst fxFlex="45%"></app-d3-sunburst>
+                <app-d3-sunburst fxFlex="25%"></app-d3-sunburst>
+                <app-d3-sunburst fxFlex="25%"></app-d3-sunburst>
+            </div>
+        </div>
+        <div class="profile-main__info-primary_charts">
+            <div class="profile-main__info-primary_charts-filmes">
+                <app-d3-bullet class="chart1" [option]="option1" [data]="dataset1"></app-d3-bullet>
+            </div>
+            <div class="profile-main__info-primary_charts-anime">
+                <app-d3-bullet class="chart2" [option]="option2" [data]="dataset2"></app-d3-bullet>
+            </div>
+            <div class="profile-main__info-primary_charts-cartoons">
+                <app-d3-bullet class="chart3" [option]="option3" [data]="dataset3"></app-d3-bullet>
+            </div>
+            <div class="profile-main__info-primary_charts-legend_films">
+                <div class="planned">
+                    <button mat-button>Запланировано</button>
+                    <span>115
+              <div class="square" style="background-color: #271c3e;"></div>
+            </span>
+                </div>
+                <div class="watch">
+                    <button mat-button>Смотрю</button>
+                    <span>107
+              <div class="square" style="background-color:#0ebeff;"></div>
+            </span>
+                </div>
+                <div class="watched">
+                    <button mat-button>Просмотрено</button>
+                    <span>367
+              <div class="square" style="background-color:#019a99;"></div>
+            </span>
+                </div>
+                <div class="reviewing">
+                    <button mat-button>Пересматриваю</button>
+                    <span>78
+              <div class="square" style="background-color:#ae63e4;"></div>
+            </span>
+                </div>
+                <div class="dropped">
+                    <button mat-button>Брошено</button>
+                    <span>1
+              <div class="square" style="background-color:#000000;"></div>
+            </span>
+                </div>
+                <div class="advised">
+                    <button mat-button>Посоветовали</button>
+                    <span>13
+              <div class="square" style="background-color:#333333;"></div>
+            </span>
+                </div>
+                <div class="snoozed">
+                    <button mat-button>Отложено</button>
+                    <span>34
+              <div class="square" style="background-color:#ebebeb;"></div>
+            </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="profile-main__info-about">
+            <app-expansion-panel [panelTitle]="'О себе'" [panelExpanded]="true" [panelStyle]="'middle-strip'" [panelIcon]="'plus'">
+                <article class="profile-main__info-about-article">
+                    <p> Хабрахабр основан в 2006 году. Издателем проекта является компания «Тематические Медиа».</p>
+                    <p>Аудитория проекта — прогрессивно мыслящие люди, интересующиеся будущим IT-рынка в целом и интернет-экономики в частности. Хабрахабр будет одинаково интересен программистам и журналистам, рекламщикам и верстальщикам, аналитикам и копирайтерам,
+                        менеджерам высшего и среднего звена, владельцам крупных компаний и небольших фирм, а также всем тем, для кого IT — это не просто две буквы алфавита.</p>
+                </article>
+            </app-expansion-panel>
+        </div>
+
+
+        <div class="profile-main__info-table">
+            <app-expansion-panel [panelTitle]="'Список аниме'" [panelSubtitle]="'1314'" [panelExpanded]="true" [panelStyle]="'middle-strip'" [panelIcon]="'plus'">
+                <div class="profile-main__info-table-table_list">
+                    <div class="example-container">
+                        <div class="example-header">
+                            <mat-form-field>
+                                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Фильтр">
+                            </mat-form-field>
+                        </div>
+
+                        <mat-table #table [dataSource]="dataSource" matSort>
+                            <!-- Position Column -->
+                            <ng-container matColumnDef="number">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> № </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.number}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Upload Date Column -->
+                            <ng-container matColumnDef="uploadDate">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Добавлено </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.uploadDate}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Update Date Column -->
+                            <ng-container matColumnDef="updateDate">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Обновлено </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.updateDate}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Evaluation Column -->
+                            <ng-container matColumnDef="evaluation">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Оценка </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.evaluation.overall}} / {{element.evaluation.self}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="name">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Название </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Episodes Column -->
+                            <ng-container matColumnDef="episodes">
+                                <mat-header-cell class="episodes-header" *matHeaderCellDef mat-sort-header> Эпизоды </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.episodes.total}} \ {{element.episodes.viewed}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Status Column -->
+                            <ng-container matColumnDef="status">
+                                <mat-header-cell class="status-header" *matHeaderCellDef mat-sort-header> Статус </mat-header-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <mat-icon class="status-icon" matSuffix svgIcon="{{element.status}}"></mat-icon>
+                                </mat-cell>
+                            </ng-container>
+
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                        </mat-table>
+                    </div>
+                </div>
+            </app-expansion-panel>
+
+        </div>
+    </div>
+</div>

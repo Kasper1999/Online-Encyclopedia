@@ -1,0 +1,35 @@
+<div class="common-info">
+  <div class="common-info__sidebar">
+    <app-common-info-sidebar></app-common-info-sidebar>
+  </div>
+  <div class="common-info__content">
+    <app-card>
+      <router-outlet></router-outlet>
+      <div class="common-info__content--actions" actions>
+        <div class="common-info__content--actions_exta-layout">
+          <div class="common-info__content-publish">
+            <h4 class="common-info__content-publish--title">Опубликовать в: </h4>
+            <div class="common-info__content-publish-icons">
+              <mat-icon class="common-info__content-publish-icons--steam" matSuffix svgIcon="steam"></mat-icon>
+              <mat-icon class="common-info__content-publish-icons--telegram" matSuffix svgIcon="telegram"></mat-icon>
+              <mat-icon class="common-info__content-publish-icons--youtube" matSuffix svgIcon="youtube"></mat-icon>
+              <mat-icon class="common-info__content-publish-icons--twitter" matSuffix svgIcon="twitter"></mat-icon>
+              <mat-icon class="common-info__content-publish-icons--vk" matSuffix svgIcon="vk"></mat-icon>
+              <mat-icon class="common-info__content-publish-icons--facebook" matSuffix svgIcon="facebook"></mat-icon>
+              <mat-icon class="common-info__content-publish-icons--googleplus" matSuffix svgIcon="googleplus"></mat-icon>
+              <mat-icon class="common-info__content-publish-icons--discord" matSuffix svgIcon="discord"></mat-icon>
+            </div>
+          </div>
+          <div class="common-info__content-benefit">
+            <h4 class="common-info__content-benefit--title">Была ли эта статья полезна?</h4>
+            <div class="common-info__content-benefit-buttons">
+              <app-button [title]="'ДА'" [type]="'secondary'"></app-button>
+              <app-button [title]="'НЕТ'" [type]="'secondary'"></app-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-card>
+
+  </div>
+</div>

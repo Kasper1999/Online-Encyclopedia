@@ -1,0 +1,13 @@
+<div class="cog-menu">
+  <button class="cog-menu__cog-btn" name="cog" aria-label="cog" role="presentation" mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon class="cog-menu__cog-btn-icon" svgIcon="cog"></mat-icon>
+  </button>
+  <mat-menu class="cog-menu__menu" #menu="matMenu" yPosition="below">
+    <button mat-menu-item (click)="onTitleEdit()">
+      <span>Редактировать название</span>
+    </button>
+    <button mat-menu-item (click)="onDecriptionEdit()">
+      <span>Редактировать описание</span>
+    </button>
+  </mat-menu>
+</div>

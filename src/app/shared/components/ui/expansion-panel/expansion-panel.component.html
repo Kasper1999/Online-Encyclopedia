@@ -1,0 +1,16 @@
+<mat-expansion-panel class="expansion-panel" [ngClass]="{'thin-strip': (panelStyle === 'thin-strip'), 'middle-strip': (panelStyle === 'middle-strip')}"
+  [expanded]="panelExpanded" (opened)="panelExpanded = true" (closed)="panelExpanded = false">
+  <mat-expansion-panel-header class="expansion-panel__header">
+    <mat-panel-title class="expansion-panel__header-title">
+      <mat-icon class="expansion-panel__header-title--icon" svgIcon="{{panelExpanded  ? triggerIcon.openIcon : triggerIcon.closeIcon }}"></mat-icon>
+      <span class="expansion-panel__header-title--heading">{{panelTitle}}
+        <span class="expansion-panel__header-title--subtitle">{{panelSubtitle}}</span>
+      </span>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="expansion-panel__content">
+    <ng-content></ng-content>
+  </div>
+
+</mat-expansion-panel>

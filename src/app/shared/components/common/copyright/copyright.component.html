@@ -1,0 +1,16 @@
+<div class="copyright">
+    <button class="copyright__flag-btn" name="flag" aria-label="flag" role="presentation" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon class="copyright__flag-btn-icon" svgIcon="{{iconType}}"></mat-icon>
+    </button>
+    <p class="copyright__title">WTH &#169; 2012 - {{year}}</p>
+    <mat-menu class="copyright__menu" #menu="matMenu" yPosition="below">
+        <button mat-menu-item (click)="toggleIcon('ru')">
+            <mat-icon class="copyright__menu-icon" svgIcon="ru"></mat-icon>
+            <span>Русский</span>
+        </button>
+        <button mat-menu-item (click)="toggleIcon('en')">
+            <mat-icon class="copyright__menu-icon" svgIcon="en"></mat-icon>
+            <span>English</span>
+        </button>
+    </mat-menu>
+</div>

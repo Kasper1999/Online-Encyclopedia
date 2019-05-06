@@ -1,0 +1,121 @@
+@mixin expansion-panel {
+  text-align: center;
+  background-color: transparent;
+}
+
+.catalogs-panel {
+  &__external-panel {
+    @include expansion-panel;
+    &.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+      box-shadow: none;
+    }
+    &-header {
+      display: flex;
+      max-height: 35px;
+      max-width: 235px;
+      padding-right: 0;
+      background-color: #333333;
+
+      &.mat-expanded:hover,
+      &.mat-expanded:focus {
+        background-color: #333333;
+      }
+    }
+    &-title {
+      justify-content: space-between;
+      color: #fff;
+      font-size: 16px;
+      margin-right: 10px;
+      .mat-icon {
+        height: 18px;
+        width: 18px;
+      }
+    }
+    &.mat-expansion-panel:not(.mat-expanded) {
+      .mat-expansion-panel-header:not([aria-disabled="true"]):hover {
+        background-color: #333333;
+      }
+    }
+    /deep/ .mat-expansion-panel-content {
+      .mat-expansion-panel-body {
+        padding: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__genres-panel {
+    @include expansion-panel;
+    &.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+      box-shadow: none;
+    }
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-height: 34px;
+      background-color: #252525;
+      color: white;
+      cursor: pointer;
+      .catalogs-panel__icon {
+        position: absolute;
+        left: 202px;
+        top: 1px;
+      }
+      /deep/ .mat-button-wrapper {
+        position: relative;
+        bottom: 2px;
+      }
+    }
+    /* [ngClass]-class for special genres */
+    .header-background {
+      background-color: #019a99 !important;
+    }
+  }
+
+  &__subgenres-list {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-top: 15px;
+    color: #fff;
+    &-button {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 204px;
+      max-height: 34px;
+      background-color: #252525;
+      color: white;
+      cursor: pointer;
+      .catalogs-panel__icon {
+        position: absolute;
+        left: 167px;
+        bottom: 21px;
+      }
+      /deep/ .mat-button-wrapper {
+        position: relative;
+        bottom: 2px;
+      }
+    }
+  }
+}
+
+.catalogs-panel__icon {
+  width: 13px;
+  height: 13px;
+}
+
+/* Buttons */
+.mat-raised-button {
+  border-radius: 0px;
+}
+
+/* disble button shadow */
+.mat-raised-button:not([disabled]):active:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+}
+
+.mat-raised-button:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+}

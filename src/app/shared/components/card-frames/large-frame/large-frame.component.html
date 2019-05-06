@@ -1,0 +1,91 @@
+<div class="large-frame__container">
+
+  <mat-card class="large-frame__container-card">
+    <div class="large-frame__angle-invis" (click)="showAlert()"></div>
+    <mat-card-header class="large-frame__card-header">
+      <mat-card-title class="large-frame__card-header-title">
+        <ng-content select="[title]"></ng-content>
+      </mat-card-title>
+      <div class="large-frame__header-info">
+        <div class="large-frame__header-info-rating info-item">
+          <mat-icon class="info-icon" matSuffix svgIcon="fire"></mat-icon>
+          <ng-content class="large-frame__header-info-rating-content" select="[header-rating]"></ng-content>
+        </div>
+        <div class="large-frame__header-info-statistic info-item">
+          <mat-icon class="info-icon" matSuffix svgIcon="stats-bars"></mat-icon>
+          <ng-content class="large-frame__header-info-statistic-content" select="[header-statistic]"></ng-content>
+        </div>
+        <div class="large-frame__header-info-comments info-item">
+          <mat-icon class="info-icon" matSuffix svgIcon="bubble"></mat-icon>
+          <ng-content class="large-frame__header-info-comments-content" select="[header-comments]"></ng-content>
+        </div>
+        <div class="large-frame__header-info-views info-item">
+          <mat-icon class="info-icon" matSuffix svgIcon="eye"></mat-icon>
+          <ng-content class="large-frame__header-info-views-content" select="[header-views]"></ng-content>
+        </div>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content class="large-frame__card-content">
+      <div class="large-frame__card-content-img">
+        <ng-content select="[img]"></ng-content>
+      </div>
+      <div class="large-frame__card-content-info">
+        <div class="large-frame__card-content-article">
+          <ng-content select="[article]"></ng-content>
+        </div>
+        <div class="large-frame__card-content-feature">
+          <div class="large-frame__card-content-feature-column_1">
+            <div class="large-frame__card-content-feature-column_1-year feature_element">
+              <p class="feature_title">Год:</p>
+              <ng-content select="[year]"></ng-content>
+            </div>
+            <div class="large-frame__card-content-feature-column_1-country feature_element">
+              <p class="feature_title">Страна:</p>
+              <ng-content select="[country]"></ng-content>
+            </div>
+            <div class="large-frame__card-content-feature-column_1-release feature_element">
+              <p class="feature_title">Дата выпуска:</p>
+              <ng-content select="[release-date]"></ng-content>
+            </div>
+            <div class="large-frame__card-content-feature-column_1-genre feature_element">
+              <p class="feature_title">Жанр:</p>
+              <ng-content select="[genre]"></ng-content>
+            </div>
+          </div>
+          <div class="large-frame__card-content-feature-column_2">
+            <div class="large-frame__card-content-feature-column_2-screenwriter feature_element">
+              <p class="feature_title">Сценарист:</p>
+              <ng-content select="[screenwriter]"></ng-content>
+            </div>
+            <div class="large-frame__card-content-feature-column_2-producer feature_element">
+              <p class="feature_title">Режисер:</p>
+              <ng-content select="[producer]"></ng-content>
+            </div>
+            <div class="large-frame__card-content-feature-column_2-studio feature_element">
+              <p class="feature_title">Студия:</p>
+              <ng-content select="[studio]"></ng-content>
+            </div>
+            <div class="large-frame__card-content-feature-column_2-series feature_element">
+              <p class="feature_title">Количество серий:</p>
+              <ng-content select="[series]"></ng-content>
+            </div>
+          </div>
+        </div>
+        <div class="large-frame__card-content-sub_info">
+          <div class="large-frame__card-content-sub_info-uploaded">
+            <p class="added_title">Видео добавил:</p>
+            <ng-content class="name" select="[video-uploaded-name]"></ng-content>
+            <p class="slash">|</p>
+            <ng-content select="[video-uploaded-date]"></ng-content>
+          </div>
+          <div class="large-frame__card-content-sub_info-stars">
+            <ng-content select="[stars]"></ng-content>
+            <!-- Stars -->
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+
+  </mat-card>
+</div>

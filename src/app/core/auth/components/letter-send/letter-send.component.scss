@@ -1,0 +1,57 @@
+.letterSend {
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 45px;
+  &__topIcon {
+    padding-top: 5%;
+    margin-bottom: -10px;
+    width: 100%;
+    height: 100%;
+    fill: #ffffff;
+  }
+  &__title {
+    color: #ffffff;
+    margin: 0;
+  }
+  &__line {
+    width: 100%;
+    min-width: 270px; /* width to right scrollbar */
+    margin-left: -15px;
+    height: 3px;
+    background: #202020;
+    display: block;
+  }
+  &__article {
+    color: #ffffff;
+    &-paragraph {
+      margin-top: 50px;
+    }
+    &-item {
+      margin: 10px 0px;
+    }
+    &--link {
+      color: #ffffff;
+    }
+  }
+  &__button {
+    background-color: #00a74d;
+    width: 100%;
+    /* &--disabled { */
+    /* Overwrite material disabled button properties */
+    /* background-color: #ebebeb!important;
+      color: #000000!important;
+      cursor: unset!important;
+    } */
+  }
+  &__cancel {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+    &--link-time,
+    &--link {
+      text-decoration: underline;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+}

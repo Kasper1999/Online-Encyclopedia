@@ -1,0 +1,39 @@
+.profile-privacy {
+	&__ttl {
+		margin-left:-8px;/* .mat-card-header-text{margin:0 8px;} */
+	}
+	&__btn {
+		background: #00a74d;
+	}
+	&__tg {
+		margin-bottom: 5px;
+	}
+	&__cnt {
+		margin:10px 0;
+	}
+	&__rdGr {
+		display: inline-flex;
+		flex-direction: column;
+		// margin-bottom:15px;
+	}
+	&__rdBtn {
+		margin: 5px;
+	}
+}
+::ng-deep {
+	& .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+		background:#8b008b;
+	}
+	& .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    	background-color: rgba(139, 0, 139, 0.5);
+	}
+	& .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    	background-color: #8b008b;
+	}
+	& .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    	border-color: #8b008b;
+	}
+}
+.hide {
+	display:none;
+}

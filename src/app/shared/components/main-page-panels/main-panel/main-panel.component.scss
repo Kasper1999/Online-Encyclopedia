@@ -1,0 +1,108 @@
+mat-icon {
+    color: white;
+}
+
+.main-panel {
+    &__sort-modes,
+    &__view-modes {
+        height: 37px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        input:checked + mat-icon {
+            /deep/ svg {
+                fill: #0fbeff;
+            }
+        } 
+    }
+
+    /* Disable default checkbox label */
+    .main-panel__sort-mode,
+    .main-panel__view-mode {                
+            display: none;
+    }
+
+    &__view-modes {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        &-label {
+            cursor: pointer;
+        }
+    }
+
+    &__sort-modes {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        &-label {
+            cursor: pointer;
+        }
+        
+    }
+
+    &__external-panel {
+        margin-bottom: 10px;
+        background-color: transparent;
+
+        /* Disable default material shadow */
+        &.mat-expansion-panel:not([class*=mat-elevation-z]) {
+            box-shadow: none;
+        }
+
+        &-header {
+            display: flex;
+            max-height: 25px;
+            padding: 0;
+            background: #202020; /* For older browsers */
+            background: linear-gradient(to right, #202020, #545454);
+
+            &.mat-expansion-panel-header.mat-expanded:hover,
+            &.mat-expansion-panel-header.mat-expanded:focus {
+                background: linear-gradient(to right, #202020, #545454);
+            }
+
+            /* Disable default material indicator */
+            /deep/ .mat-expansion-indicator {
+                display: none;
+            }
+        }
+
+        &.mat-expansion-panel:not(.mat-expanded) {
+            .mat-expansion-panel-header:not([aria-disabled='true']):hover {
+                background: linear-gradient(to right, #202020, #545454);
+            }
+        }
+
+        &-title {
+            color: #fff;
+            &-icon {
+                margin-left: 10px;
+                margin-top: 2px;
+                height: 13px;
+                width: 13px;
+            }
+            &-heading {
+                padding-bottom: 2px;
+                margin-left:5px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    /deep/ .mat-expansion-panel-content {
+        margin-top: 15px;
+        .mat-expansion-panel-body {
+            padding: 0;
+        }
+    }
+
+    /deep/ .mat-expansion-panel-spacing {
+        margin: 0;
+    }
+}
+
+.panel_fixed {
+    position: fixed;
+    top: 0px;
+    overflow-x: hidden;
+}

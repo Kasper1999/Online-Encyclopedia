@@ -1,0 +1,421 @@
+@mixin sidebar_miniavatars_position {
+  &-wrapper {
+    .element {
+      display: inline-block;
+      img {
+        /* Margins for friends avatars */
+        margin: 0px 4px 10px 4px;
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+}
+
+.profile-main {
+  background-color: #545454;
+
+  &__sidebar {
+    width: 240px;
+    &-avatar--img {
+      width: 240px;
+      max-height: 270px;
+    }
+    &-buttons {
+      color: white;
+      /* 'Add' button */
+      &--add {
+        margin: 10px 0px;
+        max-height: 35px !important;
+        background-color: #00a74d;
+        .icon {
+          margin-right: 5px;
+        }
+      }
+      /* Comments iocns */
+      &-icons {
+        cursor: pointer;
+        margin-bottom: 5px;
+        &--icon_1 {
+          margin: 0px 10px 0px 5px;
+        }
+      }
+
+      /* Card with messages, statistic and tweaks buttons */
+      &-card {
+        padding: 10px 0px;
+        margin-bottom: 20px;
+        &--btn {
+          height: 35px;
+          width: 100%;
+          color: white;
+          text-align: left;
+          padding-left: 30px;
+          .icon {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    /* Card with friends of the user */
+    &-card {
+      padding: 15px 0px;
+      background-color: #202020;
+      color: white;
+      margin-bottom: 20px;
+      &-relations {
+        margin: auto;
+        margin-bottom: 5px;
+        width: 100%;
+        text-align: left;
+        padding-left: 30px;
+        font-size: 18px;
+        &--icon {
+          margin-right: 5px;
+        }
+      }
+      &-list {
+        padding-left: 5px;
+        @include sidebar_miniavatars_position;
+      }
+      .friends--title {
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      &--best-title {
+        background: #202020;
+        background: linear-gradient(to right, #202020, #2d33e2);
+        color: #ffffff;
+      }
+      &--work-title {
+        background: #202020;
+        background: linear-gradient(to right, #202020, #cf2d2d);
+        color: #ffffff;
+      }
+      &--online-title {
+        background: #202020;
+        background: linear-gradient(to right, #202020, #545454);
+        color: #ffffff;
+      }
+    }
+  }
+
+  /* Main info about the user */
+  &__info {
+    &-headbar {
+      &-status {
+        margin: 20px 5px 5px 50px;
+        color: #ffffff;
+        &-nickname {
+          margin-left: 10px;
+        }
+        &-name {
+          margin-left: 10px;
+          h3 {
+            margin-bottom: 5px;
+          }
+        }
+        &-role {
+          margin-bottom: 5px;
+          max-width: 300px;
+          button {
+            color: white;
+            width: 100%;
+            min-width: 150px;
+            background-color: #00a74d;
+            box-shadow: 4px 4px #006732;
+          }
+        }
+        &-additional {
+          .btn {
+            max-width: 50px;
+            /deep/ .mat-button {
+              min-width: 50px !important;
+            }
+          }
+        }
+      }
+
+      /* Polar D3 charts */
+      &-charts_polar {
+      }
+
+      /* Main D3 chart */
+    }
+    &-primary_charts {
+      width: 100%;
+      margin-top: 10px;
+      padding: 0 10px;
+      box-sizing: border-box;
+      &-filmes {
+      }
+      &-anime {
+      }
+      &-cartoons {
+        margin-bottom: 3px;
+      }
+      &-legend_films {
+        margin-left: 40px;
+        margin-right: 100px;
+        margin-bottom: 20px;
+        color: #ffffff;
+        font-size: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        span {
+            white-space: nowrap;
+        }
+      }
+      &-comics {
+      }
+      &-legend_comics {
+        margin-left: 40px;
+        margin-right: 150px;
+        margin-bottom: 5px;
+        color: #ffffff;
+        font-size: 12px;
+        div {
+          display: inline-block;
+        }
+      }
+      &-literature {
+        width: 100%;
+      }
+      &-legend_literature {
+        margin-left: 40px;
+        margin-right: 150px;
+        margin-bottom: 5px;
+        color: #ffffff;
+        font-size: 12px;
+        div {
+          display: inline-block;
+        }
+      }
+      &-games {
+      }
+      &-legend_games {
+        margin-left: 40px;
+        margin-right: 420px;
+        margin-bottom: 5px;
+        color: #ffffff;
+        font-size: 12px;
+        div {
+          display: inline-block;
+        }
+      }
+    }
+
+    /* Panel about user */
+    &-about {
+      margin-left: 10px;
+      &-article {
+        margin: 10px 30px;
+        color: #ffffff;
+      }
+    }
+
+    /* Table with anime list */
+    &-table {
+      margin-left: 10px;
+      &--number-span {
+        color: #ffffff;
+      }
+      &-table_list {
+        /* Structure */
+        .example-container {
+          margin: 20px 30px;
+          display: flex;
+          flex-direction: column;
+          min-width: 300px;
+        }
+
+        .example-header {
+          min-height: 64px;
+          padding: 8px 24px 0;
+        }
+
+        .mat-form-field {
+          font-size: 14px;
+          width: 100%;
+        }
+
+        .mat-table {
+          overflow: auto;
+          max-height: 500px;
+          background: #545454;
+          mat-header-row {
+            mat-header-cell {
+              color: #ffffff;
+            }
+          }
+          mat-row {
+            mat-cell {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+      .mat-column-number {
+        max-width: 50px;
+      }
+      .mat-column-updateDate,
+      .mat-column-uploadDate {
+        max-width: 100px;
+        float: right;
+      }
+      .mat-column-name {
+        float: left;
+      }
+      .mat-column-evaluation {
+        max-width: 100px;
+      }
+      .mat-column-status {
+        max-width: 50px;
+        float: right;
+        .status-icon {
+          width: 18px;
+          height: 18px;
+        }
+      }
+      .status-header {
+        padding-right: 10px;
+      }
+      .episodes-header {
+        padding-left: 10px;
+        box-sizing: border-box;
+      }
+      .mat-column-episodes {
+        max-width: 150px;
+      }
+    }
+  }
+}
+
+/* Nicknmae mat-menu */
+.nickname {
+  margin-bottom: 5px;
+  &-status {
+    font-size: 12px;
+    &-menu {
+      position: relative;
+      right: 10px;
+      bottom: 5px;
+      &--icon {
+        width: 8px;
+        height: 8px;
+        position: relative;
+        bottom: 10px;
+      }
+    }
+    &--nickname-icon {
+      width: 14px;
+      height: 14px;
+      position: relative;
+      bottom: 17px;
+    }
+    &-icon--online {
+      fill: #43b581 !important;
+    }
+    &-icon--not-active {
+      fill: #faa61a !important;
+    }
+    &-icon--not-disturb {
+      fill: #f04747 !important;
+    }
+    &-icon--invis {
+      fill: #bfbfbf !important;
+    }
+    &-hint {
+      font-size: 12px;
+      &--title {
+        padding: 0px 10px;
+        margin: 0;
+        max-width: 235px;
+      }
+    }
+  }
+}
+
+/* Expansion panel common styles */
+.profile__panel {
+  margin-bottom: 10px;
+  background-color: transparent;
+
+  /* Disable default material shadow */
+  &.mat-expansion-panel:not([class*='mat-elevation-z']) {
+    box-shadow: none;
+  }
+
+  &-header {
+    display: flex;
+    max-height: 40px;
+    padding: 0;
+    background: #202020; /* For older browsers */
+    background: linear-gradient(to right, #202020, #545454);
+
+    &.mat-expansion-panel-header.mat-expanded:hover,
+    &.mat-expansion-panel-header.mat-expanded:focus {
+      background: linear-gradient(to right, #202020, #545454);
+    }
+
+    /* Disable default material indicator */
+    /deep/ .mat-expansion-indicator {
+      display: none;
+    }
+  }
+
+  .panel__open-icon {
+    margin-left: 10px;
+    margin-top: 1px;
+    height: 18px;
+    width: 18px;
+  }
+
+  &.mat-expansion-panel:not(.mat-expanded) {
+    .mat-expansion-panel-header:not([aria-disabled='true']):hover {
+      background: linear-gradient(to right, #202020, #545454);
+    }
+  }
+
+  /deep/ .mat-expansion-panel-body {
+    padding-left: 0;
+  }
+
+  &-title {
+    background: #202020;
+    background: linear-gradient(to right, #202020, #545454);
+    color: #bfbfbf;
+    font-size: 20px;
+    &-heading {
+      padding-bottom: 2px;
+      padding-left: 10px;
+    }
+  }
+}
+
+.square {
+    display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-bottom: -1px;
+  margin-left: 5px;
+}
+
+/* Mat menu fixed width */
+#{'/deep/'} #cdk-overlay-1 {
+  width: 200px;
+}
+
+@media screen and (max-width: 370px) {
+  .main-info-primary_charts {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 600px) and (min-width: 370px) {
+  .main-info-primary_charts {
+    width: 500px;
+  }
+}

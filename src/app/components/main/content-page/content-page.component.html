@@ -1,0 +1,143 @@
+<div class="content" fxLayout fxLayout.xs="column">
+  <app-content-sidebar>
+    <div sidebar-title>Аниме</div>
+    <div assessment-integer>7</div>
+    <div assessment-fractional>.67</div>
+    <div assessment-title>Средняя оценка</div>
+    <div imdb-rating>8.20</div>
+    <div kinopoisk-rating>7.22</div>
+    <div info-title>Информация</div>
+    <div info-type>Сериал</div>
+    <div info-year>2014</div>
+    <div info-release>11.07.2014</div>
+    <div info-country>Япония</div>
+    <div info-series>12</div>
+    <div info-duration></div>
+    <div info-russian-title>Персона 4: Золотое издание</div>
+    <div info-english-title>Person 4: Gold Edition</div>
+    <div info-japanese-title>人4.ゴールドエディション</div>
+    <div info-producer>Киси Сейдзи</div>
+    <div info-screenwriter>Хасино Кацура</div>
+    <div info-tag>Нет</div>
+    <div info-budget>90 000 000 000 $</div>
+  </app-content-sidebar>
+
+  <div class="content__main" fxLayout="column">
+    <div class="content__main-headbar" fxLayout fxLayout.xs="column" fxLayoutAlign="start none">
+      <div fxLayout class="content__main-headbar-rating">
+        <mat-icon matSuffix svgIcon="compass"></mat-icon>
+        <div class="content__main-headbar-rating-info">
+          <p>Рейтинг</p>
+          <span>
+            <i>#</i> 132</span>
+        </div>
+      </div>
+      <div fxLayout class="content__main-headbar-favorites">
+        <mat-icon matSuffix svgIcon="star"></mat-icon>
+        <div class="content__main-headbar-favorites-info">
+          <p>Избранное</p>
+          <span>13232</span>
+        </div>
+      </div>
+    </div>
+    <div class="content__main-slider">
+      <app-content-slider [contentData]="mainSliderImg"></app-content-slider>
+    </div>
+    <div class="content__main-description" fxLayout fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column">
+      <div fxFlex class="content__main-description-cover_slider">
+        <app-cover-slider [coverData]="coverSliderImg"></app-cover-slider>
+        <div class="content__main-slider-stars" fxLayout fxLayoutAlign="space-around none">
+          <mat-icon class="first_star" matSuffix svgIcon="star"></mat-icon>
+          <mat-icon class="second_star" matSuffix svgIcon="star"></mat-icon>
+          <mat-icon class="third_star" matSuffix svgIcon="star"></mat-icon>
+          <mat-icon class="fourth_star" matSuffix svgIcon="star"></mat-icon>
+          <mat-icon class="fifth_star" matSuffix svgIcon="star"></mat-icon>
+        </div>
+      </div>
+      <div fxFlex="70%" fxLayout="column" class="content__main-description-text">
+        <div class="content__main-description-text-title" fxLayout>
+          <h4>
+            Персона 4 Golden/ Persona 4 The Golden Animation
+          </h4>
+          <mat-icon></mat-icon>
+        </div>
+        <div class="content__main-description-text-substr" fxLayout fxLayout.xs="column" fxLayoutAlign="start none">
+          <div fxFlex="initial" class="content__main-description-text-substr-add" fxLayout>
+            <button [ngClass]="{'addArticleColor': articleStatus !== 'Добавить'}" class="content__main-description-text-substr-add--menu"
+              name="status" aria-label="status" role="status" mat-button [matMenuTriggerFor]="statusMenu">
+              <mat-icon class="content__main-description-text-substr-add--icon" svgIcon="archive"></mat-icon>
+              {{articleStatus}}
+            </button>
+            <mat-menu class="content__main-description-text-substr-add--list" #statusMenu="matMenu" yPosition="below">
+              <button class="content__main-description-text-substr-add--btn" mat-menu-item (click)="toggleArticleStatus('Просмотренное')">
+                <span>Просмотренное</span>
+              </button>
+              <button class="content__main-description-text-substr-add--btn" mat-menu-item (click)="toggleArticleStatus('Брошено')">
+                <span>Брошено</span>
+              </button>
+              <button class="content__main-description-text-substr-add--btn" mat-menu-item (click)="toggleArticleStatus('Смотрю')">
+                <span>Смотрю</span>
+              </button>
+              <button class="content__main-description-text-substr-add--btn" mat-menu-item (click)="toggleArticleStatus('Пересматриваю')">
+                <span>Пересматриваю</span>
+              </button>
+              <button class="content__main-description-text-substr-add--btn" mat-menu-item (click)="toggleArticleStatus('Отложено')">
+                <span>Отложено</span>
+              </button>
+              <button class="content__main-description-text-substr-add--btn" mat-menu-item (click)="toggleArticleStatus('Запланировано')">
+                <span>Запланировано</span>
+              </button>
+              <button class="content__main-description-text-substr-add--btn content__main-description-text-substr-add--delete" *ngIf="articleStatus !== 'Добавить'"
+                mat-menu-item (click)="toggleArticleStatus('Добавить')">
+                <span>Удалить</span>
+              </button>
+            </mat-menu>
+          </div>
+
+          <div fxFlex="80" class="content__main-description-text-substr-favorites" fxLayout>
+            <button [ngClass]="{'favoriteAnimeColor': favoriteAnime}" class="content__main-description-text-substr-favorites--btn" mat-button
+              (click)="selectArticleFavorite()">
+              <mat-icon svgIcon="star"></mat-icon>
+              <span>Избранное</span>
+              <span>2/50</span>
+            </button>
+          </div>
+          <div fxFlex class="content__main-description-text-substr-language">
+            <button class="content__main-description-text-substr-language-btn" name="flag" aria-label="flag" role="presentation" mat-icon-button
+              [matMenuTriggerFor]="languageMenu">
+              <mat-icon class="content__main-description-text-substr-language-btn--icon" svgIcon="{{languageIconType}}"></mat-icon>
+            </button>
+            <mat-menu #languageMenu="matMenu" yPosition="below">
+              <button mat-menu-item (click)="toggleLanguageIcon('ru')">
+                <mat-icon style="margin-bottom: 15px" svgIcon="ru"></mat-icon>
+                <span>Русский</span>
+              </button>
+              <button mat-menu-item (click)="toggleLanguageIcon('en')">
+                <mat-icon style="margin-bottom: 15px" svgIcon="en"></mat-icon>
+                <span>English</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+        <div fxLayout fxLayout.md="column" fxLayout.sm="column" fxLayout.xs="column" class="content__main-description-text-article">
+          <article>
+            <p class="first_paragraph">
+              <span>Описание:</span>
+              Добро пожаловать в Бархатную комнату. Она находится между сном и реальностью, и лишь заключившие контракт могут туда попасть.
+              Похоже, Вам предстоит занятное путешествие.</p>
+            <p class="second_paragraph">Из-за новой работы родителей за границей Ю Наруками вынужден на целый год переехать из мегаполиса в маленький
+              городок, жить у младшего брата матери с его мелкой дочуркой и ходить в новую школу с придурковатым учителем.
+              Скучная жизнь, но пережить можно. Вот только сразу после переезда в городе происходит убийство телеведущей,
+              а помимо этого по школе ходят слухи о полуночной программе, которую можно увидеть ровно в полночь, если будешь
+              один во время дождя... И время от времени Ю преследуют какие-то видения... Чтобы отвлечься, он решает проверить
+              школьную легенду, и его чуть не засасывает в телевизор! После он рассказывает об этом одноклассникам Ханамуре
+              и Сатонаке. Они идут в торговый центр, и по неосторожности их действительно засасывает туда непонятно куда...
+              В мир, который буквально кишит тенями, и явно недружелюбными. Однако голос внутри главного героя твердит: «Я
+              — это Ты, а Ты — это Я», и в момент, когда тени настигают беглецов, происходит нечто, и за спиной Ю появляется
+              некая огромная фигура, которой он может управлять, как самим собой.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

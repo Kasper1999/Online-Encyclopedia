@@ -1,0 +1,67 @@
+.footer {
+  color: #ffffff;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  &__copyright {
+    justify-content: flex-start;
+    display: flex;
+  }
+  &__items-list {
+    padding-left: 0;
+    margin-top: 0px;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 50px;
+    &-icon {
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      fill: #ffffff;
+      &--steam:hover {
+        fill: #bbb9b7 !important;
+        transition: fill 0.5s;
+        -webkit-transition: fill 0.5s;
+      }
+      &--telegram:hover {
+        fill: #27a5e7 !important;
+        transition: fill 0.5s;
+        -webkit-transition: fill 0.5s;
+      }
+      &--youtube:hover {
+        fill: #ff0000 !important;
+        transition: fill 0.5s;
+        -webkit-transition: fill 0.5s;
+      }
+      &--twitter:hover {
+        fill: #1da1f2 !important;
+        transition: fill 0.5s;
+        -webkit-transition: fill 0.5s;
+      }
+      &--vk:hover {
+        fill: #5181b8 !important;
+        transition: fill 0.5s;
+        -webkit-transition: fill 0.5s;
+      }
+      &--facebook:hover {
+        fill: #4862a3 !important;
+        transition: fill 0.5s;
+        -webkit-transition: fill 0.5s;
+      }
+      &--googleplus:hover {
+        fill: #dd4e42 !important;
+        transition: fill 0.5s;
+        -webkit-transition: fill 0.5s;
+      }
+      &--discord:hover {
+        fill: #7289da !important;
+        transition: fill 0.5s;
+        -webkit-transition: fill 0.5s;
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>WTH</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png?v=rMlQkNPnXJ">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png?v=rMlQkNPnXJ">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicons/android-chrome-192x192.png?v=rMlQkNPnXJ">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png?v=rMlQkNPnXJ">
+  <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg?v=rMlQkNPnXJ" color="#e6008d">
+  <link rel="shortcut icon" href="./assets/favicons/favicon.ico?v=rMlQkNPnXJ">
+  <meta name="apple-mobile-web-app-title" content="WTH">
+  <meta name="application-name" content="WTH">
+  <meta name="msapplication-TileColor" content="#2c2c2c">
+  <meta name="msapplication-TileImage" content="./assets/favicons/mstile-144x144.png?v=rMlQkNPnXJ">
+  <meta name="theme-color" content="#8C508C">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="msapplication-navbutton-color" content="#8C508C">
+  <meta name="Description" content="Онлайн энциклопедия, социальная сеть, предоставляющая своим пользователям возможность организовывать свой досуг. Редактируемая пользователем база данных.">
+  <link rel="manifest" href="./assets/manifest.json">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115980017-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-115980017-1');
+
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (d, w, c) {
+      (w[c] = w[c] || []).push(function () {
+        try {
+          w.yaCounter48118235 = new Ya.Metrika({
+            id: 48118235,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            trackHash: true
+          });
+        } catch (e) {}
+      });
+
+      var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () {
+          n.parentNode.insertBefore(s, n);
+        };
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+      if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+      } else {
+        f();
+      }
+    })(document, window, "yandex_metrika_callbacks");
+
+  </script>
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/48118235" style="position:absolute; left:-9999px;" alt="" />
+    </div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+
+</head>
+
+<body>
+  <app-root fxFlexFill fxLayout="column">
+    <div style="
+    background-color: #333333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;">
+      <!-- Loading animation -->
+      <div class='tetrominos'>
+        <div class='tetromino box1'></div>
+        <div class='tetromino box2'></div>
+        <div class='tetromino box3'></div>
+        <div class='tetromino box4'></div>
+      </div>
+      <!--  -->
+      <div class="text" style="
+        color: white;
+        text-align: center;
+        margin-top: 30%;
+        font-family:Arial, Helvetica, sans-serif;">
+        <div>
+          <span>alpha version 0.0.1</span>
+        </div>
+        <div>
+          <h4>Да, загрузка без оптимизации, придется подождать</h4>
+        </div>
+      </div>
+    </div>
+    <img class="cat" height="500" width="500" src="./assets/img/vzuh.png" style="
+    position: fixed;
+    bottom: 0;
+    left: 30;
+    margin-bottom: -30px;" />
+  </app-root>
+</body>
+
+</html>

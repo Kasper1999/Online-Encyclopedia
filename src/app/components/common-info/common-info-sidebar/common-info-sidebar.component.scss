@@ -1,0 +1,83 @@
+$sidebarBtnColor: white;
+.common-info-sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #333333;
+  width: 100%;
+  min-width: 100%;
+  max-width: 240px;
+  height: 100%;
+
+  &__nav {
+    margin: 0;
+    padding: 0;
+    border-top: 5px solid #555555;
+    list-style-type: none;
+    width: 100%;
+    min-width: 100%;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  &__btn {
+    color: $sidebarBtnColor;
+    padding: 5px 5px 5px 30px;
+    font-size: 15px;
+    width: 100%;
+    line-height: 35px;
+    white-space: normal;
+    text-align: left;
+
+    &--dot {
+      padding-right: 3px;
+    }
+
+    /deep/.mat-button-wrapper {
+      float: left;
+    }
+
+    &_primary {
+      background-color: #00a74d;
+      margin-bottom: 40px;
+      /deep/.mat-button-wrapper {
+        float: none;
+      }
+    }
+
+    &.active {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+
+    &:hover:not(.common-info-sidebar__btn_primary) {
+      background-color: rgba(0, 0, 0, 0.12);
+      transition: background-color 0.5s;
+      -webkit-transition: background-color 0.5s;
+    }
+  }
+
+  /* Extension panel */
+  .common-info-sidebar__panel {
+    background-color: #333333;
+    &-header {
+      padding: 0px 10px;
+      padding-right: 30px;
+      &-title {
+        color: #ffffff;
+      }
+    }
+
+    /deep/ .mat-expansion-indicator::after {
+      color: #ffffff;
+    }
+
+    /deep/ .mat-expansion-panel-body {
+      padding: 0 0px 16px;
+    }
+  }
+
+  /deep/ .mat-expansion-panel {
+    box-shadow: unset;
+  }
+}

@@ -1,0 +1,39 @@
+a {
+    text-decoration: none;
+    color:inherit;
+}
+.forum-post {
+    padding: 25px 10px 5px 5px;
+    color: #fff;
+    .head {
+        padding-bottom: 20px;
+        div {
+            font-size: 20px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.7);
+        }
+        .mat-raised-button {
+          background: #AE63E4;
+        }
+    }
+    .post {
+        width:50%;
+        margin-bottom: 10px;
+        .header {
+            margin-bottom:10px;
+            span {
+                margin-right: 5px;
+            }
+            span:first-child {
+                color:#ae63ea;
+            }
+            .date {
+                color:rgba(255,255,255,0.7);
+            }
+            mat-icon {
+              font-size: 14px;
+            }
+        }
+    }
+}

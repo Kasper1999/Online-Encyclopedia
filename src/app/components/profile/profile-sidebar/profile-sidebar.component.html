@@ -1,0 +1,36 @@
+<div class="profile-sidebar">
+  <div class="profile-sidebar__conteiner">
+    <ul class="profile-sidebar__nav">
+      <li class="profile-sidebar__nav-item">
+        <button class="profile-sidebar__btn" mat-button [routerLinkActive]="['active']" [routerLink]="['settings/personal']">Профиль</button>
+      </li>
+      <li class="profile-sidebar__nav-item">
+        <button class="profile-sidebar__btn" mat-button [routerLinkActive]="['active']" [routerLink]="['settings/password']">Пароль</button>
+      </li>
+      <li class="profile-sidebar__nav-item">
+        <button class="profile-sidebar__btn" mat-button [routerLinkActive]="['active']" [routerLink]="['settings/security']">Безопасность</button>
+      </li>
+      <li class="profile-sidebar__nav-item">
+        <button class="profile-sidebar__btn" mat-button [routerLinkActive]="['']" [routerLink]="" (click)="showAlert()">Уведомления</button>
+      </li>
+      <li class="profile-sidebar__nav-item">
+        <button class="profile-sidebar__btn" mat-button [routerLinkActive]="['']" [routerLink]="['settings/friends']">Списки друзей</button>
+      </li>
+      <li class="profile-sidebar__nav-item">
+        <button class="profile-sidebar__btn" mat-button [routerLinkActive]="['']" [routerLink]="" (click)="showAlert()">Черный список</button>
+      </li>
+      <li class="profile-sidebar__nav-item">
+        <button class="profile-sidebar__btn" mat-button [routerLinkActive]="['']" [routerLink]="['settings/privacy']" >Приватность</button>
+      </li>
+    </ul>
+    <ul class="profile-sidebar__nav">
+      <li class="profile-sidebar__nav-item">
+        <button class="profile-sidebar__btn" mat-button [routerLinkActive]="['']" [routerLink]="['settings/appearance']">Внешний вид сайта</button>
+      </li>
+      <li class="profile-sidebar__nav-item">
+        <button class="profile-sidebar__btn profile-sidebar__btn_primary" mat-button (click)="showAlert()">Сохранить</button>
+      </li>
+    </ul>
+    <app-footer></app-footer>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+<div class="common-info-sidebar">
+  <div class="common-info-sidebar__conteiner">
+    <ul class="common-info-sidebar__nav">
+
+      <li class="common-info-sidebar__nav-item">
+        <mat-expansion-panel class="common-info-sidebar__panel">
+          <mat-expansion-panel-header class="common-info-sidebar__panel-header">
+            <mat-panel-title class="common-info-sidebar__panel-header-title">
+              Общая информация
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/confidentiality']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>Конфиденциальность</span>
+          </button>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/terms_of_use']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>Условия использования</span>
+          </button>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/agreement']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>Пользовательское соглашение</span>
+          </button>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/rightholders']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>Для правообладателей</span>
+          </button>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/creators']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>Создатели</span>
+          </button>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/about']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>О нас</span>
+          </button>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/brands']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>Бренды</span>
+          </button>
+        </mat-expansion-panel>
+      </li>
+      <li class="common-info-sidebar__nav-item">
+        <mat-expansion-panel class="common-info-sidebar__panel">
+          <mat-expansion-panel-header class="common-info-sidebar__panel-header">
+            <mat-panel-title class="common-info-sidebar__panel-header-title">
+              Описание функционала
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/personal_list']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>Личный список</span>
+          </button>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/styles']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>Настройка стилей ресурса</span>
+          </button>
+        </mat-expansion-panel>
+      </li>
+
+      <li class="common-info-sidebar__nav-item">
+        <mat-expansion-panel class="common-info-sidebar__panel">
+          <mat-expansion-panel-header class="common-info-sidebar__panel-header">
+            <mat-panel-title class="common-info-sidebar__panel-header-title">
+              Версии
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/alpha-0.0.1']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>alpha version 0.0.1</span>
+          </button>
+        </mat-expansion-panel>
+      </li>
+
+      <li class="common-info-sidebar__nav-item">
+        <mat-expansion-panel class="common-info-sidebar__panel">
+          <mat-expansion-panel-header class="common-info-sidebar__panel-header">
+            <mat-panel-title class="common-info-sidebar__panel-header-title">
+              Разработчикам
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/API']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>API</span>
+          </button>
+          <a href="https://trello.com/b/lWquv7MY/wthninja">
+            <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button>
+              <span class="common-info-sidebar__btn--dot">&#9679;</span>
+              <span>Разработка сайта</span>
+            </button>
+          </a>
+          <button class="common-info-sidebar__btn common-info-sidebar__panel-btn" mat-button [routerLink]="['/info/vacancies']">
+            <span class="common-info-sidebar__btn--dot">&#9679;</span>
+            <span>Вакансии</span>
+          </button>
+        </mat-expansion-panel>
+      </li>
+    </ul>
+    <app-footer></app-footer>
+  </div>
+</div>

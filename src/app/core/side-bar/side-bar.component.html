@@ -1,0 +1,136 @@
+<div class="sidebar" [ngClass]="{'sidebar_fixed': sidebarFixed}">
+  <div class="sidebar__fixed">
+    <img *ngIf="user" class="sidebar__fixed-avatar-img" src="http://legionportal.hol.es/img/left-blockgirl.png" alt="" [routerLink]="['/profile']">
+    <mat-icon class="sidebar__fixed-icon sidebar__fixed-icon-search" svgIcon="search"></mat-icon>
+    <mat-icon *ngIf="!user" class="sidebar__fixed-icon sidebar__fixed-icon-enter" svgIcon="enter" (click)="open()"></mat-icon>
+    <mat-icon *ngIf="user" class="sidebar__fixed-icon sidebar__fixed-icon-menu" svgIcon="menu" (click)="open()"></mat-icon>
+    <mat-icon *ngIf="user" class="sidebar__fixed-icon sidebar__fixed-icon-compass" svgIcon="compass"></mat-icon>
+    <mat-icon class="sidebar__fixed-icon sidebar__fixed-icon-warn" svgIcon="attention"></mat-icon>
+    <div *ngIf="user" class="sidebar__fixed-icon">
+      <mat-icon class="sidebar__fixed-icon sidebar__fixed-icon-letter" svgIcon="letter"></mat-icon>
+      <span class="sidebar__fixed-icon-letter--number">2</span>
+    </div>
+
+    <div class="sidebar__fixed-down-key">
+      <app-scroll-button></app-scroll-button>
+    </div>
+
+  </div>
+  <mat-sidenav-container>
+    <!-- User authenticated -->
+    <mat-sidenav id='sidenav' class="sidebar__nav" #sidenav (keydown.escape)="close()" *ngIf="user">
+      <div class="sidebar__nav-top">
+        <div class="sidebar__inner-avatar">
+          <img parallax src="http://legionportal.hol.es/img/left-blockgirl.png" alt="" class="sidebar__inner-avatar--img">
+          <p class="sidebar__inner-avatar--name">
+            Sanqa
+            <span class="sidebar__inner-avatar--name--online"></span>
+          </p>
+        </div>
+        <div class="sidebar__inner-home">
+          <button mat-icon-button aria-label="SidenavClose" role="button" name="sidenavClose" class="sidebar__icon_btn sidebar__icon_btn-left"
+            (click)="close()">
+            <mat-icon class="sidebar__home-arrow_icon" svgIcon="chevronLeft"></mat-icon>
+          </button>
+          <button mat-icon-button aria-label="Profile" role="button" name="Profile" class="sidebar__icon_btn sidebar__icon_btn-right">
+            <mat-icon class="sidebar__home-home_icon" svgIcon="home"></mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="sidebar__nav-categories" *ngIf="user">
+        <ng-scrollbar autoHide="true">
+          <div class="sidebar__inner">
+            <ul class="sidebar__inner-notif" [dragula]='"first-bag"'>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Сообщения</button>
+                <button mat-raised-button class="sidebar__inner-notif-item-number sidebar__inner-color-message_number">20</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Ответы</button>
+                <button mat-raised-button class="sidebar__inner-notif-item-number sidebar__inner-color-answer_number">1</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Новости</button>
+                <button mat-raised-button class="sidebar__inner-notif-item-number sidebar__inner-color-news_number">46322</button>
+              </li>
+              <span class="sidebar__inner-notif--line"></span>
+            </ul>
+            <ul class="sidebar__inner-notif" [dragula]='"second-bag"'>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Статистика сайта</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Вклад</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Рейтинг правок</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Журнал модерации</button>
+              </li>
+              <span class="sidebar__inner-notif--line"></span>
+            </ul>
+            <ul class="sidebar__inner-notif" [dragula]='"third-bag"'>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Вакансии</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Новые идеи</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Поддержка</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Справочный центр</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Конфиденциальность</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Условия использования</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Соглашение</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Для правообладателей</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Создатели</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">О нас</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Начало работы</button>
+              </li>
+              <li class="sidebar__inner-notif-item">
+                <button mat-raised-button class="sidebar__inner-notif-item-text sidebar__inner-color_text">Бренды</button>
+              </li>
+            </ul>
+          </div>
+        </ng-scrollbar>
+      </div>
+      <div class="sidebar__nav-panel" *ngIf="user">
+        <button mat-icon-button aria-label="Tweak" role="button" name="tweak" class="sidebar__nav-panel-icon-btn">
+          <mat-icon class="sidebar__nav-panel-icon sidebar__nav-panel-left" svgIcon="tweak"></mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Volume" role="button" name="volume" class="sidebar__nav-panel-icon-btn">
+          <mat-icon class="sidebar__nav-panel-icon sidebar__nav-panel-middle" svgIcon="volume"></mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Exit" role="button" name="exit" class="sidebar__nav-panel-icon-btn" (click)="signOut()">
+          <mat-icon class="sidebar__nav-panel-icon sidebar__nav-panel-right" svgIcon="exit"></mat-icon>
+        </button>
+      </div>
+    </mat-sidenav>
+
+    <!-- User not authenticated -->
+    <mat-sidenav id='authSidenav' class="sidebar__nav" #sidenav (keydown.escape)="close('escape')" *ngIf="!user">
+      <ng-scrollbar class="sidebar__nav-sideanv-auth" autoHide="true">
+        <app-auth></app-auth>
+      </ng-scrollbar>
+    </mat-sidenav>
+    <!-- Backdrop -->
+    <div [ngClass]="{'sidebar__backdrop': sidebarOpen}" *ngIf="!user" (click)="close()"></div>
+  </mat-sidenav-container>
+</div>

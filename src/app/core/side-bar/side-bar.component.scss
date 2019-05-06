@@ -1,0 +1,330 @@
+$topBlockHeight: 185px;
+
+.sidebar {
+  height: 100%;
+  background-color: #000000;
+  overflow: hidden;
+  /* Column small sidebar */
+  &__fixed {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-avatar-img {
+      max-width: 40px;
+      max-height: 40px;
+    }
+    &-icon {
+      fill: white;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+  }
+  /* Main sidebar panels */
+  &__nav {
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    width: 280px;
+    min-height: 100%;
+    height: 100%;
+    background-color: #333333 !important;
+    overflow: hidden;
+    &-top {
+      position: fixed;
+      top: 0px;
+      width: 100%;
+    }
+    &-categories {
+      margin-top: 66%; // margin from the top panel
+      width: 100%;
+      height: calc(100% - #{$topBlockHeight});
+      /deep/ .ng-scrollbar-view {
+        width: calc(100% + 39px) !important;
+        height: calc(100% + 21px) !important;
+      }
+    }
+    &-panel {
+      position: fixed;
+      display: flex;
+      justify-content: space-around;
+      bottom: 0px;
+      width: 100%;
+      height: 40px;
+      background-color: #111111;
+      border-top: 5px solid transparent;
+      z-index: 11;
+    }
+    &-sideanv-auth {
+      /deep/ .ng-scrollbar-view {
+        width: calc(100% + 39px) !important;
+        height: calc(100% + 21px) !important;
+      }
+    }
+  }
+
+  /* Top panel */
+  &__inner {
+    &-avatar {
+      background: url(../../../assets/img/bcg.png) no-repeat center;
+      height: 150px;
+      background-size: cover;
+      &--img {
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 75px;
+        height: 75px;
+      }
+      &--name {
+        margin-top: 5px;
+        margin-left: 20px;
+        font-size: 37px;
+        color: #ffffff;
+        display: flex;
+        align-items: flex-start;
+        &--online {
+          width: 10px;
+          height: 10px;
+          border-radius: 50px;
+          background: #55b660;
+        }
+      }
+    }
+    &-home {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111111;
+      height: 35px;
+      .sidebar__icon_btn-right {
+        margin-right: 25px;
+      }
+      .sidebar__icon_btn-left {
+        margin-left: 25px;
+      }
+      .sidebar__icon_btn {
+        width: 30px;
+        height: 30px;
+      }
+      .sidebar__home-arrow_icon {
+        position: absolute;
+        top: 6px;
+        right: 7px;
+        height: 18px;
+        width: 18px;
+      }
+      .sidebar__home-home_icon {
+        position: absolute;
+        top: 5px;
+        right: 1px;
+        height: 22px;
+        width: 22px;
+      }
+    }
+  }
+}
+
+/* Middle panel */
+.sidebar__inner-notif {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  &-item {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    color: white;
+    list-style-type: none;
+    &-number {
+      max-height: 15px;
+      margin: auto;
+      position: absolute;
+      z-index: 3;
+      right: 57px;
+      padding: 1px 2px;
+      margin-top: 15px;
+      font-size: 12px;
+      /* Relative positioning of the number buttons */
+      /deep/ .mat-button-wrapper {
+        position: relative;
+        bottom: 12px;
+      }
+    }
+    /deep/ .mat-raised-button {
+      min-width: 20px !important;
+    }
+    &-text {
+      padding: 0;
+      min-height: 45px !important;
+      width: 100%;
+      white-space: normal;
+      height: 100%;
+      font-size: 20px;
+      &:hover {
+        background-color: #202020;
+      }
+      &.active {
+        background-color: #202020;
+      }
+      /* Setting left_side for middle panel buttons */
+      /deep/ .mat-button-wrapper {
+        float: left;
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+    }
+    &:last-child {
+      margin-bottom: 60px;
+    }
+  }
+  &--line {
+    width: 100%;
+    height: 3px;
+    background: #202020;
+    display: block;
+  }
+  /* Custom scrollbar bottom margin fix */
+  /deep/ .ng-scrollbar-thumb {
+    bottom: 50px;
+    top: 0px;
+  }
+}
+
+/* Button colors */
+.sidebar__inner-color {
+  &-message_number {
+    background-color: #00a74d;
+  }
+  &-answer_number {
+    background-color: #ff9900;
+  }
+  &-news_number {
+    background-color: #0ebeff;
+  }
+  &_text {
+    background-color: #333333;
+  }
+}
+
+/* Bottom panel icons positioning*/
+.sidebar__nav-panel-icon-btn {
+  width: 35px;
+  height: 35px;
+  .sidebar__nav-panel-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .sidebar__nav-panel-left {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+  }
+  .sidebar__nav-panel-middle {
+    position: absolute;
+    top: 3px;
+    right: 2px;
+  }
+  .sidebar__nav-panel-right {
+    position: absolute;
+    top: 5px;
+    left: 7px;
+  }
+}
+
+/* fixed column-line sidebar icons positioning */
+.sidebar__fixed-icon {
+  margin-top: 10px;
+}
+.sidebar__fixed-icon-search {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 2px;
+  left: -2px;
+}
+.sidebar__fixed-icon-menu {
+  position: relative;
+  top: 2px;
+  left: -2px;
+}
+.sidebar__fixed-icon-enter {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 4px;
+  left: -5px;
+}
+.sidebar__fixed-icon-compass {
+  position: relative;
+  top: 2px;
+  left: -2px;
+}
+.sidebar__fixed-icon-warn {
+  fill: #333333 !important;
+  position: relative;
+  top: 2px;
+  left: 1px;
+}
+.sidebar__fixed-icon-letter {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 20px;
+  left: 2px;
+  &--number {
+    font-size: 12px;
+    position: relative;
+    bottom: 23px;
+    left: 13px;
+    min-width: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+    color: #ffffff;
+    background: #55b660;
+  }
+}
+.sidebar__fixed-down-key {
+  position: fixed;
+  padding-bottom: 20px;
+  width: 40px;
+  left: 0;
+  bottom: 0;
+  // fix white artifact
+  background: #000;
+}
+
+/* Sidebar backdrop conatainer */
+.sidebar__backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+//   background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Sidebar fixed with scroll */
+.sidebar_fixed {
+  position: fixed;
+  top: 0;
+}
+
+/* Button default style */
+.mat-raised-button {
+  border-radius: 0px;
+  text-align: left;
+}
+
+/* Shadow disable */
+.mat-raised-button:not([disabled]):active:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+}
+
+.mat-raised-button:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+}

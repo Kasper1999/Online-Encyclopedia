@@ -1,0 +1,36 @@
+<div class="list-frame__container">
+  <mat-card class="list-frame__container-card">
+    <div class="list-frame__angle-invis" (click)="showAlert()"></div>
+    <mat-card-header class="list-frame__container-card-header">
+      <div class="list-frame__container-card-header-title">
+        <ng-content select="[title]"></ng-content>
+      </div>
+    </mat-card-header>
+    <mat-card-content class="list-frame__card-content">
+      <p class="list-frame__card-content-article">
+        <img class="list-frame__card-content-img" src="{{listFrameImg}}" alt="">
+        <app-read-more [text]="listFrameArticle" [maxHeight]="260">
+          <!-- <ng-content select="[article]"></ng-content> -->
+        </app-read-more>
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="list-frame__card-footer">
+      <div class="list-frame__card-footer-rating footer-info">
+        <mat-icon class="icon" matSuffix svgIcon="fire"></mat-icon>
+        <ng-content select="[footer-rating]"></ng-content>
+      </div>
+      <div class="list-frame__card-footer-statistic footer-info">
+        <mat-icon class="icon" matSuffix svgIcon="stats-bars"></mat-icon>
+        <ng-content select="[footer-statistic]"></ng-content>
+      </div>
+      <div class="list-frame__card-footer-comments footer-info">
+        <mat-icon class="icon" matSuffix svgIcon="bubble"></mat-icon>
+        <ng-content select="[footer-comments]"></ng-content>
+      </div>
+      <div class="list-frame__card-footer-views footer-info">
+        <mat-icon class="icon" matSuffix svgIcon="eye"></mat-icon>
+        <ng-content select="[footer-views]"></ng-content>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,8 @@
+#ex1 {
+  height: 500px;
+  max-height: 350px;
+  /deep/ gallery-dots {
+    z-index: 1;
+    bottom: 0;
+  }
+}

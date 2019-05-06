@@ -1,0 +1,110 @@
+$thinBackgroundColor: linear-gradient(to right, #202020, #545454);
+
+/* Expansion panel common styles */
+.expansion-panel {
+  margin-bottom: 10px;
+  background-color: transparent;
+
+  /* Disable default material shadow */
+  &.mat-expansion-panel:not([class*='mat-elevation-z']) {
+    box-shadow: none;
+  }
+
+  /deep/ .mat-expansion-panel-header {
+    padding: 0;
+    &-title {
+      margin-right: 0;
+    }
+  }
+
+  &-header {
+    display: flex;
+    padding: 0;
+  }
+
+  /* Disable default material indicator */
+  /deep/ .mat-expansion-indicator {
+    display: none;
+  }
+
+  /deep/ .mat-expansion-panel-body {
+    padding-left: 0;
+  }
+}
+
+/* /////////////////// Custom styles for the expansion panel /////////////////// */
+
+/* Thin strip style */
+.thin-strip {
+  .expansion-panel__header {
+    max-height: 22px;
+    background: #202020; /* For older browsers */
+    background-color: $thinBackgroundColor;
+    &.mat-expansion-panel-header.mat-expanded:hover,
+    &.mat-expansion-panel-header.mat-expanded:focus {
+      background-color: $thinBackgroundColor;
+    }
+
+    &-title {
+      background: #202020;
+      background-color: $thinBackgroundColor;
+      color: #bfbfbf;
+      font-size: 12px;
+      &--icon {
+        margin-left: 10px;
+        margin-top: 2.5px;
+        height: 13px;
+        width: 13px;
+      }
+      &--heading {
+        padding-bottom: 2px;
+        padding-left: 10px;
+      }
+    }
+  }
+
+  &.mat-expansion-panel:not(.mat-expanded) {
+    .mat-expansion-panel-header:not([aria-disabled='true']):hover {
+      background-color: $thinBackgroundColor;
+    }
+  }
+}
+
+/* Middle strip style */
+.middle-strip {
+  .expansion-panel__header {
+    max-height: 40px;
+    /*  background: #202020; */ /* For older browsers */
+    background: $thinBackgroundColor;
+    &.mat-expansion-panel-header.mat-expanded:hover,
+    &.mat-expansion-panel-header.mat-expanded:focus {
+      background-color: $thinBackgroundColor;
+    }
+
+    &-title {
+      /*  background: #202020; */
+      background: $thinBackgroundColor;
+      color: #bfbfbf;
+      font-size: 20px;
+      &--icon {
+        margin-left: 10px;
+        margin-top: 2px;
+        height: 18px;
+        width: 18px;
+      }
+      &--heading {
+        padding-bottom: 2px;
+        padding-left: 10px;
+      }
+      &--subtitle {
+        color: #ffffff;
+      }
+    }
+  }
+
+  &.mat-expansion-panel:not(.mat-expanded) {
+    .mat-expansion-panel-header:not([aria-disabled='true']):hover {
+      background: $thinBackgroundColor;
+    }
+  }
+}

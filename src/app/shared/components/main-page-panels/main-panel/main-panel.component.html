@@ -1,0 +1,44 @@
+<ng-scrollbar autoHide="true" [ngClass]="{'panel_fixed': panelFixed}">
+  <div class="main-panel">
+    <div class="main-panel__view-modes">
+      <label class="main-panel__view-modes-label" *ngFor="let mode of viewModes" for="{{mode}}">
+        <button mat-icon-button aria-label="Viewmode" name="Viewmode" role="button" (click)="toggleView(mode)">
+          <input id="{{mode}}" class="main-panel__view-mode" [value]='mode' type="radio" name="view-enums" [(ngModel)]="defaultViewMode">
+          <mat-icon svgIcon="{{mode}}"></mat-icon>
+        </button>
+      </label>
+    </div>
+
+      <mat-expansion-panel class="main-panel__external-panel" [expanded]="panel.isExpanded" (opened)="panel.isExpanded = true"
+        (closed)="panel.isExpanded = false">
+        <mat-expansion-panel-header class="main-panel__external-panel-header">
+          <mat-panel-title class="main-panel__external-panel-title">
+            <mat-icon class="main-panel__external-panel-title-icon" svgIcon="{{panel.isExpanded  ? 'check-empty-' : 'check-empty+' }}"></mat-icon>
+            <span class="main-panel__external-panel-title-heading">{{panel.title}}</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+
+        <div class="main-panel__items">
+          <ng-container>
+
+            <div class="main-panel__sort-modes">
+              <label class="main-panel__sort-modes-label" *ngFor="let mode of sortModes" for="{{mode}}">
+                <button mat-icon-button aria-label="sortMode" name="sortMode" role="button" (click)="toggleSort(mode)">
+                  <input id="{{mode}}" class="main-panel__sort-mode" [value]='mode' type="radio" name="sort-enums" [(ngModel)]="defaultSortMode">
+                  <mat-icon svgIcon="{{mode}}"></mat-icon>
+                </button>
+              </label>
+            </div>
+
+            <app-catalogs-panel></app-catalogs-panel>
+          </ng-container>
+        </div>
+      </mat-expansion-panel>
+    <app-additional-panel [formatType]="'formats'"></app-additional-panel>
+    <app-additional-panel [formatType]="'statuses'"></app-additional-panel>
+    <app-additional-panel [formatType]="'types'"></app-additional-panel>
+    <app-additional-panel [formatType]="'ratings'"></app-additional-panel>
+    <app-footer></app-footer>
+  </div>
+</ng-scrollbar>

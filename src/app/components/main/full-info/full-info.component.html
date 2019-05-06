@@ -1,0 +1,131 @@
+<div class="full-info">
+    <div class="full-info__main">
+        <div class="full-info__head">
+            <button class="btn" (click)="asideToggle()">
+                <div class="icon">
+                    <svg x="0px" y="0px" viewBox="-491 743 16 16" style="" xml:space="preserve">
+                        <rect x="-489" y="750" sketch:type="MSShapeGroup" width="12" height="2">
+                        </rect>
+                        <rect x="-489" y="754" sketch:type="MSShapeGroup" width="12" height="2">
+                        </rect>
+                        <rect x="-489" y="746" sketch:type="MSShapeGroup" width="12" height="2">
+                        </rect>
+                    </svg>
+                </div>
+            </button>
+            <button class="btn">
+                <div class="icon">
+                    <svg viewBox="0 0 64 64">
+                        <path d="M32 4c17.673 0 32 11.641 32 26s-14.327 26-32 26c-1.697 0-3.363-0.108-4.989-0.315-6.874 6.874-15.078 8.106-23.011 8.287v-1.682c4.284-2.099 8-5.921 8-10.29 0-0.61-0.047-1.208-0.135-1.794-7.237-4.767-11.865-12.047-11.865-20.206 0-14.359 14.327-26 32-26z" fill="#ffffff"></path>
+                    </svg>                            
+                </div>
+            </button>
+            <span class="text">Уменьшенный до 33% от исходного (просмотреть оригинал)</span>
+            <button class="btn resize">
+                <div class="icon">
+                        <svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
+                        viewBox="0 0 1200 1200" enable-background="new 0 0 1200 1200" xml:space="preserve">
+                   <path id="path18934" inkscape:connector-curvature="0" d="M670.313,0l177.246,177.295L606.348,418.506l175.146,175.146
+                       l241.211-241.211L1200,529.688V0H670.313z M418.506,606.348L177.295,847.559L0,670.313V1200h529.688l-177.246-177.295
+                       l241.211-241.211L418.506,606.348z"/>
+                   </svg>                   
+                </div>
+            </button>
+            <button class="btn" (click)="close()">
+                <div class="icon">
+                    <svg x="0px" y="0px" viewBox="100 151 1200 1200"
+                        style="enable-background:new 100 151 1200 1200;" xml:space="preserve">
+                   <path id="path17223" inkscape:connector-curvature="0" d="M1004.1,206.6L700,510.7L395.9,206.6L155.6,446.9L459.7,751l-304.1,304.1
+                       l240.3,240.3L700,991.3l304.1,304.1l240.3-240.3L940.3,751l304.1-304.1L1004.1,206.6z"/>
+                   </svg>
+                </div>
+            </button>
+        </div>
+        <div class="full-info__body">
+            <gallery id="ex1" [items]="items" [disableThumb]="true"></gallery>
+        </div>
+    </div>
+    <div class="full-info__aside" *ngIf="asideOpened">
+        <ng-scrollbar>
+            <div class="full-info__block">
+                <h3 class="full-info__title">Информация</h3>
+                <div class="full-info__field">
+                    <p class="full-info__row">
+                        <span>ID:</span>
+                        <span>3061245</span>
+                    </p>
+                </div>
+                <div class="full-info__field">
+                    <p class="full-info__row">
+                        <span>Добавил:</span>
+                        <img class="avatar" src="../../../../assets/img/girl.png" alt="">
+                        <span>Reckles</span>
+                    </p>
+                    <p class="full-info__row">
+                        <span>Дата:</span>
+                        <span>9 дней назад</span>
+                    </p>
+                </div>
+                <div class="full-info__field">
+                    <p class="full-info__row">
+                        <span>Подтвердил:</span>
+                        <img class="avatar" src="../../../../assets/img/girl.png" alt="">
+                        <span>Нонамет</span>
+                    </p>
+                    <p class="full-info__row">
+                        <span>Дата:</span>
+                        <span>9 дней назад</span>
+                    </p>
+                </div>
+                <div class="full-info__field">
+                    <p class="full-info__row">
+                        <span>Размер:</span>
+                        <span>1020кб (2480х3508)</span>
+                    </p>
+                    <p class="full-info__row">
+                        <span>Источник:</span>
+                        <a href="https://trello.com/c/QqgEI1BG/382-lightbox" class="link">https://trello.com/c/QqgEI1BG/382-lightbox</a>
+                    </p>
+                    <p class="full-info__row">
+                        <span>Рейтинг:</span>
+                        <span>Безопасный</span>
+                    </p>
+                    <p class="full-info__row">
+                        <span>Оценка:</span>
+                        <span>9</span>
+                    </p>
+                    <p class="full-info__row">
+                        <span>Избранные:</span>
+                        <span>17</span>
+                    </p>
+                </div>
+
+            </div>
+            <div class="full-info__block">
+                <h3 class="full-info__title">Авторские права</h3>
+                <mat-chip-list aria-orientation="vertical">
+                    <mat-chip>Фронт: 6.0k</mat-chip>
+                    <mat-chip>Персона: 648</mat-chip>
+                </mat-chip-list>
+            </div>
+            <div class="full-info__block">
+                <h3 class="full-info__title">Художники</h3>
+                <mat-chip-list aria-orientation="vertical">
+                    <mat-chip>Технопарк: 114</mat-chip>
+                </mat-chip-list>
+            </div>
+            <div class="full-info__block">
+                <h3 class="full-info__title">Теги</h3>
+                <mat-chip-list class="mat-chip-list-stacked">
+                    <mat-chip>Румянец: 902k</mat-chip>
+                    <mat-chip>Закрытый рот: 95k</mat-chip>
+                    <mat-chip>Серьги: 101k</mat-chip>
+                    <mat-chip>Брови видимые через волосы: 153k</mat-chip>
+                    <mat-chip>Ювелирные изделия: 233k</mat-chip>
+                    <mat-chip>Светло-коричневые волосы: 10k</mat-chip>
+                </mat-chip-list>
+            </div>
+        </ng-scrollbar>
+    </div>
+</div>

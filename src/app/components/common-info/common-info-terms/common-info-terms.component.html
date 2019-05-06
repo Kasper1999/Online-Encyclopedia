@@ -1,0 +1,22 @@
+<h3 *ngIf="!showTitleEditor" class="terms__title">{{title}}</h3>
+
+<!-- Show title editor -->
+<div *ngIf="showTitleEditor" class="terms__title-edit_block">
+  <mat-form-field class="terms__title-edit_block--input">
+    <input matInput placeholder="Новое название:" type="text" value="" [(ngModel)]="title">
+  </mat-form-field>
+  <mat-icon class="terms__title-edit_block--icon" matSuffix svgIcon="cross" (click)="resetTitle()"></mat-icon>
+  <mat-icon class="terms__title-edit_block--icon" matSuffix svgIcon="ok" (click)="showTitleEditor = false"></mat-icon>
+</div>
+
+<app-cog-menu class="terms__cog-menu" (editTitle)="editTitle($event)" (editDescription)="editDescription($event)"></app-cog-menu>
+
+<!-- Show content editor -->
+<div *ngIf="showEditor" [froalaEditor] [(froalaModel)]="froalaContent"></div>
+<div *ngIf="showEditor" class="terms__editor-buttons">
+  <button mat-button color="primary" (click)="contentSave()">Сохранить</button>
+  <button mat-button color="primary" (click)="contentCancel()">Отменить</button>
+</div>
+
+<!-- Show inner HTML -->
+<div *ngIf="!showEditor" [innerHtml]="froalaContent"></div>

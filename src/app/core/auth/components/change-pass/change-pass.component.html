@@ -1,0 +1,27 @@
+<div class="changePass">
+  <mat-icon class="changePass__topIcon" matSuffix svgIcon="key"></mat-icon>
+  <h2 class="changePass__title">Смена пароля</h2>
+  <span class="changePass__line"></span>
+  <form class="changePass__form" novalidate [formGroup]="changeForm" (submit)="onChangeSubmit()">
+    <mat-form-field class="changePass__form-pass">
+      <span matPrefix class="changePass__form--prefix">
+        <mat-icon matSuffix svgIcon="lock"></mat-icon>
+      </span>
+      <input type="password" matInput placeholder="Пароль" formControlName="password">
+    </mat-form-field>
+    <mat-form-field class="changePass__form-confirm">
+      <span matPrefix class="changePass__form--prefix">
+        <mat-icon matSuffix svgIcon="lock"></mat-icon>
+      </span>
+      <input type="password" matInput placeholder="Пароль еще раз" formControlName="confirm">
+      <mat-hint class="changePass__form-confirm--hint">В целях безопасности после смены
+        <br> пароля произойдет выход из аккаунта на
+        <br> всех устройствах и будут отозваны
+        <br> выданные доступы и пароли приложений.</mat-hint>
+    </mat-form-field>
+    <button class="changePass__form-button" type="submit" mat-raised-button>Изменение пароля</button>
+    <p class="changePass__form-cancel">
+      <a class="changePass__form-cancel--link" (click)="toggleForm('loginPage')">Отмена</a>
+    </p>
+  </form>
+</div>

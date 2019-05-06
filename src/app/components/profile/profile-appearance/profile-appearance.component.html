@@ -1,0 +1,31 @@
+<div class="profile-appearance">
+  <app-card title="Основные цвета интерфейса:">
+    <div fxLayout="row" fxLayoutWrap>
+      <app-color-picker *ngFor="let main of mainList" [label]="main.label" [defaultHex]="main.value"></app-color-picker>
+    </div>
+  </app-card>
+
+  <app-card title="Текст:">
+    <div fxLayout="row" fxLayoutWrap>
+      <app-color-picker *ngFor="let text of textList" [label]="text.label" [defaultHex]="text.value"></app-color-picker>
+    </div>
+  </app-card>
+
+  <app-card title="Лого:">
+    <div fxLayout="row" fxLayoutWrap>
+      <app-color-picker *ngFor="let logo of logoList" [label]="logo.label" [defaultHex]="logo.value"></app-color-picker>
+    </div>
+  </app-card>
+
+  <app-card title="Элементы управления:">
+    <div fxLayout="row" fxLayoutWrap>
+      <app-color-picker *ngFor="let controls of controlsList" [label]="controls.label" [defaultHex]="controls.value"></app-color-picker>
+    </div>
+  </app-card>
+
+  <app-card title="Фокус:">
+    <div fxLayout="row" fxLayoutWrap>
+      <app-color-picker *ngFor="let focus of focusList" [label]="focus.label" [defaultHex]="focus.value"></app-color-picker>
+    </div>
+  </app-card>
+</div>

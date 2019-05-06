@@ -1,0 +1,22 @@
+<div class="info">
+    <div class="info__icon-wrap">
+        <span class="info__icon" [ngStyle]="{'background-image': 'url(' + infoData.session.iconPath + ')'}"></span>
+    </div>
+    <div class="info__content">
+        <p class="info__text">{{infoData.session.title}}</p>
+        <ul class="info__list">
+            <li>
+                <h5 class="info__list-title">Ваш адрес:</h5>
+                <p>{{infoData.session.info.address}}</p>
+            </li>
+            <li>
+                <h5 class="info__list-title">Ваш IP адрес:</h5>
+                <p>{{infoData.session.info.ip}}</p>
+            </li>
+            <li>
+                <h5 class="info__list-title">Вошел:</h5>
+                <p>{{infoData.session.info.startDate}}</p>
+            </li>
+        </ul>
+    </div>
+</div>

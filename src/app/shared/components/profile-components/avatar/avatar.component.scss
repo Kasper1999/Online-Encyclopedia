@@ -1,0 +1,53 @@
+.avatar {
+  &__uploader-file_select {
+    border: 3px dashed white;
+    padding-top: 20px;
+    &-input {
+      margin: 0px 0px 20px 20px;
+    }
+    &-text {
+      margin-left: 10px;
+      margin-top: 20px;
+      color: white;
+      &--title {
+        margin-top: 5px;
+        margin-bottom: 0px;
+      }
+      &--subtitle {
+        font-size: 10px;
+        margin-top: 5px;
+      }
+    }
+  }
+  &__cropper {
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+      &-btn--button {
+        margin: 15px 10px;
+        color: white;
+        background-color: #202020;
+      }
+      &-icon--item {
+        margin: 15px 10px;
+        color: white;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .avatar__cropper-buttons {
+    flex-direction: column;
+  }
+
+  .avatar__cropper-buttons-btn {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .avatar__cropper-buttons-icon {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

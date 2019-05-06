@@ -1,0 +1,74 @@
+@import url('https://cdn.rawgit.com/resir014/Clear-Sans-Webfont/v1.1.1/css/clear-sans.css');
+@import url('http://allfont.net/allfont.css?fonts=caviar-dreams');
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+mat-icon {
+  fill: #ffffff;
+}
+
+/* Input colors */
+.mat-input-placeholder {
+  color: #ffffff !important;
+}
+
+input {
+  color: #ffffff !important;
+}
+
+.mat-input-underline {
+  background-color: #ffffff !important;
+}
+
+.mat-select-arrow {
+  color: #ffffff !important;
+}
+
+.mat-icon-button {
+  color: #ffffff !important;
+}
+/* ----------- */
+
+/* Button default style */
+.mat-raised-button,
+.mat-button {
+  border-radius: 0px !important;
+}
+
+.mat-raised-button:not([disabled]):active:not([class*='mat-elevation-z']),
+.mat-button:not([disabled]):active:not([class*='mat-elevation-z']) {
+  box-shadow: none !important; //Shadow disable
+}
+
+.mat-raised-button:not([class*='mat-elevation-z']),
+.mat-button:not([class*='mat-elevation-z']) {
+  box-shadow: none !important;
+}
+/* ----------- */
+
+/* Material menu right angles */
+.mat-menu-panel {
+  border-radius: 0 !important;
+}
+/* ----------- */
+
+/* Tooltip styles */
+.mat-tooltip {
+  font-size: 14px !important;
+}
+/* ----------- */
+
+/* Sweet alert global styles */
+.swal2-confirm {
+  background: #00a74d !important;
+  color: #ffffff !important;
+}
+
+.swal2-popup {
+  border-radius: 0 !important;
+}
+/* ----------- */

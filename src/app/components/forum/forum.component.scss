@@ -1,0 +1,16 @@
+.forum {
+  height: 100%;
+  display: flex;
+  background-color: #545454;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+
+  &__menu {
+    flex: 0 0 240px;
+  }
+  &__content {
+    width: 100%;
+  }
+}

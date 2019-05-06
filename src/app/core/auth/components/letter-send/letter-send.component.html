@@ -1,0 +1,31 @@
+<!-- <ng-scrollbar> -->
+<div class="letterSend">
+
+  <mat-icon class="letterSend__topIcon" matSuffix svgIcon="email"></mat-icon>
+  <h2 class="letterSend__title">Письмо отправлено</h2>
+  <span class="letterSend__line"></span>
+  <div class="letterSend__article">
+    <p class="letterSend__article-paragraph">Что делать, если письмо не приходит?</p>
+    <ul>
+      <li class="letterSend__article-item">Проверьте папку "Спам(Spam)"</li>
+      <li class="letterSend__article-item">Если используете Gmail, Проверьте папку промоакции</li>
+      <li class="letterSend__article-item">Также можно воспользоваться поиском по почте по ключевому слову "password@wth.email"</li>
+      <li class="letterSend__article-item">Повторите отправку писма для восстановления пароля через час после отправки
+      </li>
+    </ul>
+    <p>Если же вы не смогли найти письмо при проверке всех доступных папок почтового ящика, необходимо обратиться в службу поддержки,
+      указав адрес вашей электронной почты.
+      <br>
+      <a class="letterSend__article--link" href="support@wth.email">support@wth.email</a>
+    </p>
+    <button class="letterSend__button" mat-raised-button [disabled]="sendLocked" [ngClass]="{'letterSend__button--disabled': sendLocked}"
+      (click)="timer()">Отправить повторно</button>
+    <p class="letterSend__cancel">
+      <a *ngIf="sendLocked" class="letterSend__cancel--link-time">Через {{initMinutes}}:
+        <span *ngIf="initSeconds < 10 && initSeconds > -1">0</span>{{initSeconds}}</a>
+      <a class="letterSend__cancel--link" (click)="toggleForm('loginPage')">Отмена</a>
+    </p>
+  </div>
+
+</div>
+<!-- </ng-scrollbar> -->

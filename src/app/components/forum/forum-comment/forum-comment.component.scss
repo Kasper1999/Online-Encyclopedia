@@ -1,0 +1,20 @@
+.forum-comment {
+  background: rgb(51, 51, 51);
+  color:#fff;
+  margin-bottom: 10px;
+  display: inline-block;
+  padding: 10px;
+  font-size: 14px;
+  .header {
+    span {
+      color:rgba(255,255,255,0.7);
+      margin-right: 5px;
+    }
+    span:first-child {
+      color:#ae63ea;
+    }
+    mat-icon {
+      font-size: 14px;
+    }
+  }
+}

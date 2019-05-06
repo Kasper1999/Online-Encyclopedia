@@ -1,0 +1,170 @@
+<div class="profile-personal">
+  <form class="profile-personal__form" [formGroup]="profileForm" novalidate (submit)="onProfileSubmit()">
+
+    <app-card [title]="'Аватар'">
+      <app-avatar></app-avatar>
+    </app-card>
+
+    <app-card [title]="'NSFW'">
+      <article class="profile-personal__nsfw--article">
+        (аббревиатура английских слов Not safe/suitable for work, что означает Небезопасно/неподходяще для работы) — Тег NSFW используется
+        для выделения статей, которые содержат такие материалы, как обнажённую натуру, гуро, порнографию и обсценную лексику,
+        которые могут создать проблемы тому, кто их будет смотреть в присутствии коллег или посторонних посетителей.
+        <br>
+        <br>Также недоступно несовершеннолетним.
+      </article>
+      <mat-slide-toggle class="profile-personal__nsfw--article" [color]="color" [checked]="checked" formControlName="nsfw">
+        NSFW
+      </mat-slide-toggle>
+    </app-card>
+
+    <app-card [title]="'Основное'">
+      <div class="profile-personal__names">
+        <mat-form-field class="profile-personal__names-name profile-personal__field profile-personal__right-offset">
+          <input matInput placeholder="Имя:" value="" formControlName="name">
+          <button mat-button *ngIf="profileForm.value.name !== ''" matSuffix mat-icon-button aria-label="Clear" name="Clear" role="button"
+            (click)="removeControl('name')">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field class="profile-personal__names-username profile-personal__field">
+          <input matInput placeholder="Никнейм(логин):" value="" formControlName="nickname">
+          <button mat-button *ngIf="profileForm.value.nickname !== ''" matSuffix mat-icon-button aria-label="Clear" name="Clear" role="button"
+            (click)="removeControl('nickname')">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="profile-personal__surname">
+        <mat-form-field class="profile-personal__surname-field profile-personal__field">
+          <input matInput placeholder="Фамилия" value="" formControlName="surname">
+          <button mat-button *ngIf="profileForm.value.surname !== ''" matSuffix mat-icon-button aria-label="Clear" name="Clear" role="button"
+            (click)="removeControl('surname')">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="profile-personal__gender">
+        <mat-form-field class="profile-personal__gender-field profile-personal__field profile-personal__deep-color">
+          <mat-select placeholder="Пол" formControlName="gender">
+            <mat-option value="option"></mat-option>
+            <mat-option value="option">Мужской</mat-option>
+            <mat-option value="option">Женский</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="profile-personal__birthday">
+        <mat-form-field class="profile-personal__birthday-field profile-personal__field">
+          <input matInput [matDatepicker]="picker" placeholder="День рождения" formControlName="birthday">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="profile-personal__country">
+        <mat-form-field class="profile-personal__country-field profile-personal__field profile-personal__deep-color">
+          <mat-select #countrySelect placeholder="Страна" formControlName="country">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let country of countriesList" (click)="selectLocation()" [value]="country">{{country}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="profile-personal__city">
+        <mat-form-field class="profile-personal__city-field profile-personal__field profile-personal__deep-color">
+          <mat-select placeholder="Город" formControlName="city">
+            <mat-option>Please choose a country</mat-option>
+            <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </app-card>
+
+    <app-card [title]="'Контакты'">
+      <div class="profile-personal__individual">
+
+        <div class="profile-personal__emails profile-personal__right-offset">
+          <div formArrayName="emails" *ngFor="let email of profileForm.get('emails').controls; let i = index;">
+            <mat-form-field class="profile-personal__emails-field profile-personal__field" [formGroupName]="i">
+              <input formControlName="email" matInput placeholder="E-mail адрес:">
+              <button mat-button *ngIf="profileForm.value.emails[i].email !== '' || i !== 0" matSuffix mat-icon-button aria-label="Clear"
+                name="Clear" role="button" (click)="removeEmail(i)">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div [hidden]="emailsCount === 9" class="profile-personal__emails-btnblock">
+            <button class="profile-personal__emails-btnblock_btn profile-personal__field" *ngIf="profileForm.value.emails[emailsCount].email !== ''"
+              mat-button matSuffix aria-label="Clear" (click)="addEmail()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="profile-personal__sites profile-personal__right-offset">
+          <div formArrayName="sites" *ngFor="let site of profileForm.get('sites').controls; let i = index;">
+            <mat-form-field class="profile-personal__sites-field profile-personal__field" [formGroupName]="i">
+              <input formControlName="site" matInput placeholder="Личный сайт:">
+              <button mat-button *ngIf="profileForm.value.sites[i].site !== '' || i !== 0" matSuffix mat-icon-button aria-label="Clear"
+                name="Clear" role="button" (click)="removeSite(i)">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div [hidden]="sitesCount === 9" class="profile-personal__sites-btnblock">
+            <button class="profile-personal__sites-btnblock_btn profile-personal__field" *ngIf="profileForm.value.sites[sitesCount].site !== ''"
+              mat-button matSuffix aria-label="Clear" (click)="addSite()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="profile-personal__social1">
+        <mat-form-field class="profile-personal__social1-field1 profile-personal__field profile-personal__right-offset">
+          <input matInput placeholder="Skype:" value="" formControlName="skype">
+          <button mat-button *ngIf="profileForm.value.skype !== ''" matSuffix mat-icon-button aria-label="Clear" name="Clear" role="button"
+            (click)="removeControl('skype')">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field class="profile-personal__social1-field2 profile-personal__field profile-personal__right-offset">
+          <input matInput placeholder="Twitter:" value="" formControlName="twitter">
+          <button mat-button *ngIf="profileForm.value.twitter !== ''" matSuffix mat-icon-button aria-label="Clear" name="Clear" role="button"
+            (click)="removeControl('twitter')">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field class="profile-personal__social1-field3 profile-personal__field">
+          <input matInput placeholder="Instagram:" value="" formControlName="instagram">
+          <button mat-button *ngIf="profileForm.value.instagram !== ''" matSuffix mat-icon-button aria-label="Clear" name="Clear" role="button"
+            (click)="removeControl('instagram')">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="profile-personal__social2">
+        <mat-form-field class="profile-personal__social2-field1 profile-personal__field profile-personal__right-offset">
+          <input matInput placeholder="Facebook:" value="" formControlName="facebook">
+          <button mat-button *ngIf="profileForm.value.facebook !== ''" matSuffix mat-icon-button aria-label="Clear" name="Clear" role="button"
+            (click)="removeControl('facebook')">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field class="profile-personal__social2-field2 profile-personal__field profile-personal__right-offset">
+          <input matInput placeholder="VK:" value="" formControlName="vk">
+          <button mat-button *ngIf="profileForm.value.vk !== ''" matSuffix mat-icon-button aria-label="Clear" name="Clear" role="button"
+            (click)="removeControl('vk')">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field class="profile-personal__social2-field3 profile-personal__field">
+          <input matInput placeholder="Discord:" value="" formControlName="discord">
+          <button mat-button *ngIf="profileForm.value.discord !== ''" matSuffix mat-icon-button aria-label="Clear" name="Clear" role="button"
+            (click)="removeControl('discord')">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </app-card>
+
+  </form>
+</div>

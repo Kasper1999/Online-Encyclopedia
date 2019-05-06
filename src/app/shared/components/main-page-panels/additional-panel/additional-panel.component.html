@@ -1,0 +1,30 @@
+<mat-accordion class="additional-panel">
+  <mat-expansion-panel class="additional-panel__external-panel" [expanded]="panelType.isExpanded" (opened)="panelType.isExpanded = true" (closed)="panelType.isExpanded = false">
+    <mat-expansion-panel-header class="additional-panel__external-panel-header">
+      <mat-panel-title class="additional-panel__external-panel-title">
+        <mat-icon class="additional-panel__external-panel-title-icon" svgIcon="{{panelType.isExpanded  ? 'check-empty-' : 'check-empty+' }}" ></mat-icon>
+        <span class="additional-panel__external-panel-title-heading">{{panelType.title}}</span> 
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="additional-panel__items">
+      <ng-container *ngFor="let item of panelType.content; let i = index">
+        <button
+          class="additional-panel__items-btn"
+          mat-raised-button
+          (click)="changeSelector(panelType.title, item.selector, i)"
+          [ngClass]="{'header-background': item.isSpecialGenre}"
+          [matTooltip]="getTooltip(item.title)"
+          [matTooltipPosition]="'right'"
+          [matTooltipShowDelay]="'1500'">
+          {{item.title}}
+          <mat-checkbox
+            [(ngModel)]="item.isEnabled">
+          </mat-checkbox>
+          <mat-icon class="additional-panel__items-btn-icon" svgIcon="{{item.selector}}"></mat-icon>
+        </button>
+      </ng-container>
+    </div>
+
+  </mat-expansion-panel>
+</mat-accordion>

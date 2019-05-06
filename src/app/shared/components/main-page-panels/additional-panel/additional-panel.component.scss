@@ -1,0 +1,109 @@
+.additional-panel {
+    &__external-panel {
+        margin-bottom: 10px;
+        background-color: transparent;
+
+        /* Disable default material shadow */
+        &.mat-expansion-panel:not([class*=mat-elevation-z]) {
+            box-shadow: none;
+        }
+
+        &-header {
+            display: flex;
+            max-height: 25px;
+            padding: 0;
+            background: #202020; /* For older browsers */
+            background: linear-gradient(to right, #202020, #545454);
+
+            &.mat-expansion-panel-header.mat-expanded:hover,
+            &.mat-expansion-panel-header.mat-expanded:focus {
+                background: linear-gradient(to right, #202020, #545454);
+            }
+
+            /* Disable default material indicator */
+            /deep/ .mat-expansion-indicator {
+                display: none;
+            }
+        }
+
+        &.mat-expansion-panel:not(.mat-expanded) {
+            .mat-expansion-panel-header:not([aria-disabled='true']):hover {
+                background: linear-gradient(to right, #202020, #545454);
+            }
+        }
+
+        &-title {
+            color: #fff;
+            &-icon {
+                margin-left: 10px;
+                margin-top: 2px;
+                height: 13px;
+                width: 13px;
+            }
+            &-heading {
+                padding-bottom: 2px;
+                margin-left:5px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    /deep/ .mat-expansion-panel-content {
+        margin-top: 15px;
+        .mat-expansion-panel-body {
+            padding: 0;
+        }
+    }
+
+    /deep/ &__items {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        color: #fff;
+        &-btn {
+            height: 34px;
+            background-color: #202020;
+            font-size: 14px;
+            margin-bottom: 15px!important;
+            &-icon {
+                position: absolute;
+                bottom: 22px;
+                right: 10px;
+                height: 13px;
+                width: 13px;
+            }
+            .mat-checkbox-layout {
+                width: 100%;
+                white-space: normal;
+            }
+            .mat-checkbox-label {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+            /* Disable default material checkbox container */
+            .mat-checkbox-inner-container {
+                display: none;
+            }
+        }
+        /* [ngClass]-class for special genres */
+        .header-background {
+            background-color: #019A99!important;
+        }
+    }
+}
+
+ /* Buttons custom style */
+ .mat-raised-button {
+    border-radius: 0px;
+    line-height: 0px;
+}
+
+/* disble button shadow */
+.mat-raised-button:not([disabled]):active:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+}
+
+.mat-raised-button:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+}

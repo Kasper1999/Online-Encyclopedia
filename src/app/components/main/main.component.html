@@ -1,0 +1,70 @@
+<div class="main">
+  <div class="main__side-content-menu">
+    <app-main-panel (toggleViewMode)="toggleMode($event)"></app-main-panel>
+  </div>
+
+    <div class="main__content">
+        <div class="main__content-card-list" *ngIf="defaultViewMode === 'list-mode'" data-infinite-scroll debounce [infiniteScrollDistance]="scrollDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
+            <app-list-frame class="main__content-card-list-frame" *ngFor="let i of array" [listFrameImg]="'https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Persona4GoldenCover.jpg/250px-Persona4GoldenCover.jpg'">
+                <div title>Персона 4 Golden</div>
+                <div article> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit aliquam alias ut deserunt recusandae delectus soluta magni? Quaerat aspernatur harum autem reiciendis consequuntur qui sunt rerum dolores cupiditate repellendus laudantium.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis distinctio rerum facilis ea possimus dicta pariatur fuga quaerat voluptate aut laborum deleniti eaque debitis corporis excepturi inventore officiis explicaboLorem
+                    ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit aliquam alias ut deserunt recusandae delectus soluta magni? Quaerat aspernatur harum autem reiciendis consequuntur qui sunt rerum dolores cupiditate repellendus laudantium.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis distinctio rerum facilis ea possimus dicta pariatur fuga quaerat voluptate aut laborum deleniti eaque debitis corporis excepturi inventore officiis explicabo
+                </div>
+                <div footer-rating>99999</div>
+                <div footer-statistic>88888</div>
+                <div footer-comments>77777</div>
+                <div footer-views>55555</div>
+            </app-list-frame>
+        </div>
+        <div class="main__content-card-small" *ngIf="defaultViewMode === 'small-mode'" data-infinite-scroll debounce [infiniteScrollDistance]="scrollDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
+            <app-small-frame *ngFor="let i of array">
+                <div title>Персона 4 Golden</div>
+                <div img (click)="sidenav.toggle()">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Persona4GoldenCover.jpg/250px-Persona4GoldenCover.jpg" alt="error" width="240px">
+                </div>
+                <div footer-rating>99999</div>
+                <div footer-statistic>88888</div>
+                <div footer-comments>77777</div>
+                <div footer-views>55555</div>
+            </app-small-frame>
+        </div>
+        <div class="main__content-card-large" *ngIf="defaultViewMode === 'large-mode'" data-infinite-scroll debounce [infiniteScrollDistance]="scrollDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
+            <app-large-frame *ngFor="let i of array">
+                <div title>Персона 4 Golden / Person 4 The Golden Animation</div>
+                <div header-rating>99999</div>
+                <div header-statistic>88888</div>
+                <div header-comments>77777</div>
+                <div header-views>55555</div>
+                <div img>
+                    <img class="card-large__img" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Persona4GoldenCover.jpg/250px-Persona4GoldenCover.jpg" alt="error" width="240px">
+                </div>
+                <div article> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit aliquam alias ut deserunt recusandae delectus soluta magni? Quaerat aspernatur harum autem reiciendis consequuntur qui sunt rerum dolores cupiditate repellendus laudantium.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis distinctio rerum facilis ea possimus dicta pariatur fuga quaerat voluptate aut laborum deleniti eaque debitis corporis excepturi inventore officiis explicaboLorem
+                    ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit aliquam alias ut deserunt recusandae delectus soluta magni? Quaerat aspernatur harum autem reiciendis consequuntur qui sunt rerum dolores cupiditate repellendus laudantium.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis distinctio rerum facilis ea possimus dicta pariatur fuga quaerat voluptate aut laborum deleniti eaque debitis corporis excepturi inventore officiis explicabo
+                </div>
+                <div class="description_font-size" year>2014</div>
+                <div class="description_font-size" country>Япония</div>
+                <div class="description_font-size" release-date>с 11.07.2014</div>
+                <div class="description_font-size" genre>Приключения, мистика, детектив</div>
+                <div class="description_font-size" screenwriter>Хасино Кацура</div>
+                <div class="description_font-size" producer>Киси Сейдзи</div>
+                <div class="description_font-size" studio>Никалодиум</div>
+                <div class="description_font-size" series>07 из 12+</div>
+                <div video-uploaded-name style="color: #f4c430;">Electra Vovka</div>
+                <div video-uploaded-date>2014.08.22</div>
+            </app-large-frame>
+        </div>
+
+<mat-sidenav-container>
+
+    <mat-sidenav align="end" #sidenav mode="over" fixedInViewport="true">
+        <app-full-info [(asideOpened)]="this.asideOpened"  (sideNaveClose)="sidenav.close();asideToggle();"></app-full-info>
+    </mat-sidenav>
+
+    <!-- Backdrop -->
+    <div [ngClass]="{'sidebar__backdrop': sidenav.opened}" *ngIf="sidenav.opened" (click)="sidenav.close();asideToggle();"></div>
+
+</mat-sidenav-container>

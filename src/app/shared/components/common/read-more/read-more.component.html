@@ -1,0 +1,2 @@
+<div [innerHTML]="text" [class.collapsed]="isCollapsed" [style.height]="isCollapsed ? maxHeight+'px' : 'auto'" (click)="isCollapsed =! isCollapsed"></div>
+<!-- <a *ngIf="isCollapsable" (click)="isCollapsed =! isCollapsed">Read {{isCollapsed? 'more':'less'}}</a> -->

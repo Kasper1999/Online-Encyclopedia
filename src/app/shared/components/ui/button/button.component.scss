@@ -1,0 +1,19 @@
+.button {
+    color: white;
+    background-color: #202020;
+    cursor: pointer;
+    
+}
+
+.mat-raised-button {
+    border-radius: 0px;
+}
+
+/* Shadow disable */
+.mat-raised-button:not([disabled]):active:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+}
+
+.mat-raised-button:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+}

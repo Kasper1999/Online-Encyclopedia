@@ -1,0 +1,23 @@
+.cog-menu {
+    text-align: center;
+    &__cog-btn {
+        &-icon {
+            width: 20px;
+            height: 20px;
+            margin-top: 1px;
+        }
+    }
+    &__title {
+        display: inline;
+        font-size: 14px;
+        color: #ebebeb;
+    }
+}
+
+.cog-menu__menu-icon {
+    margin-bottom: 15px;
+}
+
+/deep/ .cog-menu__menu .mat-menu-content {
+    background: #ebebeb;
+}

@@ -1,0 +1,142 @@
+<div class="content-sidebar" fxLayout="column">
+  <div class="content-sidebar-title">
+    <h4>
+      <ng-content select="[sidebar-title]"></ng-content>
+    </h4>
+  </div>
+  <mat-expansion-panel class="content-sidebar__status-panel" [expanded]="statusPanel.isExpanded" (opened)="statusPanel.isExpanded = true"
+    (closed)="statusPanel.isExpanded = false">
+    <mat-expansion-panel-header [ngStyle]="{'background-color': statusPanel.color}" class="content-sidebar__status-panel-header">
+      <mat-panel-title class="content-sidebar__status-panel-title">
+        <mat-icon class="content-sidebar__status-panel-title--icon" matSuffix svgIcon="archive"></mat-icon>
+        <span>{{statusPanel.title}}</span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="content-sidebar__status-panel-main">
+      <button class="content-sidebar__status-panel-btn content-sidebar__status-panel-btn--viewed" mat-raised-button (click)="toggleAnimeStatus('viewed')">Просмотренное</button>
+      <button class="content-sidebar__status-panel-btn content-sidebar__status-panel-btn--break" mat-raised-button (click)="toggleAnimeStatus('break')">Брошено</button>
+      <button class="content-sidebar__status-panel-btn content-sidebar__status-panel-btn--watch" mat-raised-button (click)="toggleAnimeStatus('watch')">Смотрю</button>
+      <button class="content-sidebar__status-panel-btn content-sidebar__status-panel-btn--reviewing" mat-raised-button (click)="toggleAnimeStatus('reviewing')">Пересматриваю</button>
+      <button class="content-sidebar__status-panel-btn content-sidebar__status-panel-btn--defer" mat-raised-button (click)="toggleAnimeStatus('defer')">Отложено</button>
+      <button class="content-sidebar__status-panel-btn content-sidebar__status-panel-btn--plan" mat-raised-button (click)="toggleAnimeStatus('plan')">Запланировано</button>
+      <button *ngIf="statusPanel.title !== 'Добавить'" class="content-sidebar__status-panel-btn content-sidebar__status-panel-btn--delete"
+        mat-raised-button (click)="toggleAnimeStatus('delete')">Удалить</button>
+    </div>
+  </mat-expansion-panel>
+  <div class="content-sidebar-rating">
+    <mat-card>
+      <div class="assessment">
+        <div fxLayout fxLayoutAlign="center none">
+          <h1>
+            <ng-content select="[assessment-integer]"></ng-content>
+          </h1>
+          <h3>
+            <ng-content select="[assessment-fractional]"></ng-content>
+          </h3>
+        </div>
+        <p>
+          <ng-content select="[assessment-title]"></ng-content>
+        </p>
+      </div>
+      <div class="rating">
+        <button class="rating-title" mat-button>
+          <span>IMDB:</span>
+          <ng-content select="[imdb-rating]"></ng-content>
+        </button>
+        <button class="rating-title" mat-button>
+          <span>Кинопоиск:</span>
+          <ng-content select="[kinopoisk-rating]"></ng-content>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+  <div class="content-sidebar-graphic">
+    <app-d3-bar-chart></app-d3-bar-chart>
+  </div>
+
+  <!-- Anime info expansion panel -->
+  <app-expansion-panel [panelTitle]="'Информация'" [panelExpanded]="true" [panelStyle]="'thin-strip'" [panelIcon]="'plus'">
+    <div fxLayout="column" class="content-sidebar__info">
+      <div class="content-sidebar__info-type">
+        <p fxLayout>
+          <span class="content-sidebar__info--item">Тип:</span>
+          <ng-content select="[info-type]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-year">
+        <p fxLayout>
+          <span class="content-sidebar__info--item">Год:</span>
+          <ng-content select="[info-year]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-release">
+        <p fxLayout>
+          <span class="content-sidebar__info--item">Дата выпуска:</span>
+          <ng-content select="[info-release]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-country">
+        <p fxLayout>
+          <span class="content-sidebar__info--item">Страна:</span>
+          <ng-content select="[info-country]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-series">
+        <p fxLayout>
+          <span class="content-sidebar__info--item">Количество серий:</span>
+          <ng-content select="[info-series]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-duration">
+        <p fxLayout>
+          <span class="content-sidebar__info--item">Продолжительность:</span>
+          <ng-content select="[info-duration]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-russian__title">
+        <p>
+          <span class="content-sidebar__info--item">По-русски:</span>
+          <ng-content select="[info-russian-title]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-english__title">
+        <p>
+          <span class="content-sidebar__info--item">По-английски:</span>
+          <ng-content select="[info-english-title]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-japanese__title">
+        <p>
+          <span class="content-sidebar__info--item">По-японски (Оригинал):</span>
+          <ng-content select="[info-japanese-title]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-producer">
+        <p fxLayout>
+          <span class="content-sidebar__info--item">Режисер:</span>
+          <ng-content select="[info-producer]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-screenwriter">
+        <p fxLayout>
+          <span class="content-sidebar__info--item">Сценарист:</span>
+          <ng-content select="[info-screenwriter]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-tag">
+        <p fxLayout>
+          <span class="content-sidebar__info--item">Слоган:</span>
+          <ng-content select="[info-tag]"></ng-content>
+        </p>
+      </div>
+      <div class="content-sidebar__info-budget">
+        <p fxLayout>
+          <span class="content-sidebar__info--item">Бюджет:</span>
+          <ng-content select="[info-budget]"></ng-content>
+        </p>
+      </div>
+    </div>
+  </app-expansion-panel>
+
+  <app-footer></app-footer>
+</div>

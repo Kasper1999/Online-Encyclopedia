@@ -1,0 +1,67 @@
+<div class="footer">
+  <div class="footer__copyright">
+    <app-copyright></app-copyright>
+  </div>
+
+  <div class="footer__items">
+    <ul class="footer__items-list">
+      <li [routerLink]="['/info/confidentiality']">
+        <a>Конфиденциальность</a>
+      </li>
+      <li [routerLink]="['/info/terms_of_use']">
+        <a>Условия использования</a>
+      </li>
+      <li [routerLink]="['/info/agreement']">
+        <a>Пользовательское соглашение</a>
+      </li>
+      <li [routerLink]="['/info/rightholders']">
+        <a>Для правообладателей</a>
+      </li>
+      <li [routerLink]="['/info/creators']">
+        <a>Создатели</a>
+      </li>
+      <li [routerLink]="['/info/about']">
+        <a>О нас</a>
+      </li>
+      <li [routerLink]="['/info/brands']">
+        <a>Бренды</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer__social">
+
+    <a href="http://steamcommunity.com/groups/wth_ninja" target="_blank">
+      <mat-icon class="footer__social-icon footer__social-icon--steam" matSuffix svgIcon="steam"></mat-icon>
+    </a>
+
+    <a href="http://t.me/ninja_hell" target="_blank">
+      <mat-icon class="footer__social-icon footer__social-icon--telegram" matSuffix svgIcon="telegram"></mat-icon>
+    </a>
+
+    <a (click)="showAlert()">
+      <mat-icon class="footer__social-icon footer__social-icon--youtube" matSuffix svgIcon="youtube"></mat-icon>
+    </a>
+
+    <a href="https://twitter.com/WTH_Hell" target="_blank">
+      <mat-icon class="footer__social-icon footer__social-icon--twitter" matSuffix svgIcon="twitter"></mat-icon>
+    </a>
+
+    <a (click)="showAlert()">
+      <mat-icon class="footer__social-icon footer__social-icon--vk" matSuffix svgIcon="vk"></mat-icon>
+    </a>
+
+    <a (click)="showAlert()">
+      <mat-icon class="footer__social-icon footer__social-icon--facebook" matSuffix svgIcon="facebook"></mat-icon>
+    </a>
+
+    <a href="https://plus.google.com/u/0/b/102443065589254330017/communities/115174881332183659311" target="_blank">
+      <mat-icon class="footer__social-icon footer__social-icon--googleplus" matSuffix svgIcon="googleplus"></mat-icon>
+    </a>
+
+    <a href="https://discord.gg/kngC9AF" target="_blank">
+      <mat-icon class="footer__social-icon footer__social-icon--discord" matSuffix svgIcon="discord"></mat-icon>
+    </a>
+
+  </div>
+</div>

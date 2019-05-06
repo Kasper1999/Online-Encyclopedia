@@ -1,0 +1,92 @@
+::ng-deep .color-picker {
+  padding: 0 !important;
+  margin-top: -4px;
+}
+::ng-deep .item-icons path {
+  fill: #fff;
+}
+
+.profile-friends {
+  .mat-card {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 30px 30px 30px;
+  }
+  &__wrapper {
+    display: flex;
+  }
+}
+
+.item {
+  &:first-child {
+    margin-top: 30px;
+  }
+  margin-bottom: 40px;
+  &-wrapper {
+    position: relative;
+  }
+  &-title,
+  &-icons,
+  &-range {
+    font-size: 20px;
+  }
+  &-right {
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+    .item-icons {
+      margin-right: 5px;
+    }
+  }
+  &-header {
+    position: relative;
+    padding-left: 15px;
+    padding-bottom: 10px;
+  }
+  &-header__separator {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: none;
+    margin: 0;
+    height: 2px;
+    width: 85%;
+    background-image: linear-gradient(to right, #3030b0, transparent);
+  }
+  &-icons {
+    height: 20px;
+    width: 20px;
+    &.bin {
+      margin-top: -7px;
+    }
+  }
+  &-inner {
+    padding: 14px;
+  }
+  &-card {
+    width: 60px;
+    height: 60px;
+    margin-right: 5px;
+  }
+}
+
+.frame-block {
+  border: 3px dashed #e8e8e8;
+  &.full {
+    height: 108px;
+  }
+  &.card {
+    width: 54px;
+    height: 54px;
+  }
+  &:hover,
+  &:focus {
+    // TODO: add transition
+    border-color: #8c508c;
+  }
+}
+
+.gray {
+  background: rgba(140, 80, 140, 0.5);
+}

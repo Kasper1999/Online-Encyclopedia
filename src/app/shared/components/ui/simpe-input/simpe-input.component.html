@@ -1,0 +1,14 @@
+<mat-form-field class="simple-input">
+  <input
+  matInput
+  type="{{type}}"
+  placeholder="{{placeholder}}"
+  [ngClass]="{'simple-input__error': inputError}"
+  [(ngModel)]="value"
+  [value]="value" 
+  (change)="onChange($event)" 
+  (keyup)="onChange($event)"/>
+  <button class="simple-input__btn" mat-button *ngIf="value" matSuffix mat-icon-button name="clear" role="button" aria-label="Clear" (click)="value=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>

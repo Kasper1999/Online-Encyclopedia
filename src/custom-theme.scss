@@ -1,0 +1,93 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$mat-custom: (
+  50: #ffffff,
+  100: #cfd8dc,
+  200: #b0bec5,
+  300: #90a4ae,
+  400: #78909c,
+  500: #607d8b,
+  600: #546e7a,
+  700: #455a64,
+  800: #37474f,
+  900: #263238,
+  A100: #cfd8dc,
+  A200: #b0bec5,
+  A400: #78909c,
+  A700: #455a64,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: white,
+    500: white,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: white,
+    A700: $white-87-opacity,
+  )
+);
+
+/* Define a custom theme */
+$candy-app-primary: mat-palette($mat-custom, 50);
+$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$candy-app-warn:    mat-palette($mat-red);
+
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+@include angular-material-theme($candy-app-theme);
+
+/* Define a custom typography */
+$app-main-typography: mat-typography-config(
+    $font-family: '"Clear Sans", "Helvetica Neue", sans-serif',
+    $display-4:     mat-typography-level(112px, 112px, 300), /* Headers */
+    $display-3:     mat-typography-level(56px, 56px, 400),
+    $display-2:     mat-typography-level(45px, 48px, 400),
+    $display-1:     mat-typography-level(34px, 40px, 400),
+    $headline:      mat-typography-level(24px, 32px, 400), /* h1 */
+    $title:         mat-typography-level(20px, 32px, 500), /* h2 */
+    $subheading-2:  mat-typography-level(16px, 28px, 400), /* h3 */
+    $subheading-1:  mat-typography-level(15px, 24px, 400), /* h4 */
+    $body-2:        mat-typography-level(14px, 24px, 500), /* Base body text */
+    $body-1:        mat-typography-level(14px, 20px, 400), /* Bolder body text */
+    $caption:       mat-typography-level(12px, 20px, 400), /* Smaller body and hint text */
+    $button:        mat-typography-level(14px, 14px, 500), /* Buttons and anchors */
+    $input:         mat-typography-level(inherit, 1.125, 400) /* Form input fields */
+);
+
+$app-letter-typography: mat-typography-config(
+    $font-family: '"Caviar Dreams", "Arial", sans-serif',
+    $headline:      mat-typography-level(24px, 32px, 400), /* h1 */
+    $title:         mat-typography-level(20px, 32px, 500), /* h2 */
+    $subheading-2:  mat-typography-level(16px, 28px, 400), /* h3 */
+    $subheading-1:  mat-typography-level(15px, 24px, 400), /* h4 */
+    $body-2:        mat-typography-level(14px, 24px, 500), /* Base body text */
+    $body-1:        mat-typography-level(14px, 20px, 400), /* Bolder body text */
+    $caption:       mat-typography-level(12px, 20px, 400) /* Smaller body and hint text */
+);
+
+@include angular-material-typography($app-main-typography);
+
+.letter-body {
+    font-size: mat-font-size($app-letter-typography, body-2) !important;
+    font-family: mat-font-family($app-letter-typography) !important;
+}
+
+.letter-bolder-body {
+    @include mat-typography-level-to-styles($app-letter-typography, body-1);
+}
+
+.letter-title h2 {
+    @include mat-typography-level-to-styles($app-letter-typography, title);
+}
+
+.letter-headline h1 {
+    @include mat-typography-level-to-styles($app-letter-typography, headline);
+}

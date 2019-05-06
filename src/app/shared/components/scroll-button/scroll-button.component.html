@@ -1,0 +1,6 @@
+<div class="sidebar__scroll-btn {{yOffset <= 600 ? '' : 'up'}}" (click)="handleScroll()">
+  <div class="sidebar__scroll-btn--wrapper">
+    <mat-icon class="sidebar__scroll-btn--icon" svgIcon="chevronDown"></mat-icon>
+  </div>
+  <span (click)="handleOnBadge($event)" class="sidebar__scroll-btn--number scroll-badge {{offsetCount > 0 ? 'scroll-badge__show' : ''}}">{{offsetCount}}</span>
+</div>

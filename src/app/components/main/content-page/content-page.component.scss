@@ -1,0 +1,191 @@
+mat-icon {
+  color: #ffffff !important;
+}
+
+@mixin info_margin {
+  p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+.content {
+  background-color: #545454;
+  &__main {
+    &-headbar {
+      min-height: 40.5px;
+      background-color: rgba(0, 0, 0, 0.476);
+      color: white;
+      z-index: 2;
+      &-rating {
+        mat-icon {
+          margin: 1px 10px 0px 15px;
+          height: 40px;
+          width: 40px;
+        }
+        &-info {
+          p {
+            margin: 0;
+            margin-top: -2px !important;
+            font-size: 12px;
+          }
+          span {
+            margin-top: -7px !important;
+            font-size: 16px;
+            i {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+      &-favorites {
+        margin-left: 50px;
+        mat-icon {
+          margin: 1px 10px 0px 0px;
+          height: 40px;
+          width: 40px;
+        }
+        &-info {
+          p {
+            margin: 0;
+            margin-top: -2px !important;
+            font-size: 12px;
+          }
+          span {
+            margin-top: -7px !important;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    &-slider {
+      margin-top: -40.5px;
+      height: 100%;
+      width: 100%;
+      max-height: 350px;
+      z-index: 0;
+      min-height: 300px;
+    }
+    &-description {
+      color: white;
+      &-cover_slider {
+        z-index: 2;
+        box-shadow: 4px 4px black;
+        margin-top: -80px;
+        max-height: 500px;
+        min-height: 500px;
+        max-width: 350px;
+        .content__main-slider-stars {
+          margin: 0 !important;
+          background-color: #202020;
+          min-height: 55px;
+          margin: 10px 10px;
+          box-shadow: 4px 4px black;
+        }
+      }
+      &-text {
+        &-title {
+          h4 {
+            text-align: center;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+        }
+        &-substr {
+          margin: 10px 0px;
+          &-add {
+            &--menu {
+              margin-left: 20px;
+              max-height: 40px;
+              width: 200px;
+            }
+            &--list {
+              width: 200px;
+            }
+            &--btn {
+              width: 200px;
+            }
+            /* Specific button for removing selected statuses */
+            &--delete,
+            &--delete:hover {
+              background-color: #b32428;
+              color: #ffffff;
+            }
+            /* Specific color, then selected status is not equal 'Добавить' */
+            .addArticleColor,
+            .addArticleColor:hover {
+              background-color: #ae63e4;
+              color: #ffffff;
+            }
+          }
+          &-favorites {
+            &--btn {
+              margin-left: 20px;
+              max-height: 40px;
+              width: 200px;
+            }
+            /* Specific color for the favorite anime*/
+            .favoriteAnimeColor {
+              background-color: #ae63e4;
+            }
+          }
+          &-language {
+            &-btn {
+              height: 40px;
+              width: 40px;
+              margin-right: 10px;
+              cursor: pointer;
+            }
+          }
+        }
+        &-article {
+          margin: 0px 10px 0px;
+          font-size: 14px;
+          article {
+            .first_paragraph {
+              margin-top: 0px;
+              span {
+                color: #bfbfbf;
+              }
+            }
+            .second_paragraph {
+              margin-bottom: 400px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Material card styles */
+.mat-card {
+  box-shadow: unset !important;
+  transition: none !important;
+  border-radius: 0 !important;
+}
+
+@media screen and (max-width: 1279px) {
+  .content__main-description-text-title {
+    margin-top: 60px;
+  }
+  .content__main-description-cover_slider {
+    margin-top: 20px !important;
+    min-height: 500px;
+    min-width: 300px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .content__main-description-cover_slider {
+    min-width: 245px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content__main-description-text-substr-favorites {
+    margin-top: 10px;
+  }
+}

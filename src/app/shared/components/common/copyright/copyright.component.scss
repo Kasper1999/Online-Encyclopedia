@@ -1,0 +1,24 @@
+.copyright {
+  text-align: center;
+  &__flag-btn {
+    margin-left: -10px;
+    &-icon {
+      width: 20px;
+      height: 20px;
+      margin-top: 1px;
+    }
+  }
+  &__title {
+    display: inline;
+    font-size: 14px;
+    color: #ebebeb;
+  }
+}
+
+.copyright__menu-icon {
+  margin-bottom: 15px;
+}
+
+/deep/ .copyright__menu .mat-menu-content {
+  background: #ebebeb;
+}
